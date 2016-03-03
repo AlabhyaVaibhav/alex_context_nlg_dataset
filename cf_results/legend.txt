@@ -1,0 +1,15 @@
+855754 -- original, just confirm and reply
+860938 -- slightly tweaked, more verbose, added apologize and request + combinations
+861213 -- using pictures only
+861385 -- using very short texts
+861455 -- longer & left-out texts, moved sentence under information
+874924 -- checking superfluous/irrelevant information (for some cases)
+          animating variants for notfound & next
+          slight tweaks in task description
+874925 -- ditto, without animated variants
+874926 -- ditto, without animated variants and with three examples
+875210 -- same as previous, improved checking for superfluous information
+======
+876156 -- final run (with the *-bug... stalled after the first 595 rows)
+            - ignoring any animated variants
+            - logging validation
