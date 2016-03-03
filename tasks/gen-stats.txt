@@ -1,0 +1,24 @@
+
+Old
+====
+
+Good: 364 / 173
+Threshold: 0 / 0
+Slots: 152 / 16
+Reply: 2014 / 369
+
+New
+====
+
+Good: 629 / 393
+Threshold: 0 / 0
+Slots: 296 / 15
+Reply: 711 / 249
+
+All
+====
+Good: 993 / 546
+Threshold: 0 / 0
+Slots: 448 / 20
+Reply: 2725 / 594
+
