@@ -298,8 +298,6 @@ reply	and how many transfers	request(num_transfers)	and how many transfers	num_t
 reply	and how many transfers would that be	request(num_transfers)	and how many transfers would that be	num_transfers=1
 reply	how how long will it take	request(duration)	how how long will it take	duration=74 minutes
 reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	duration=78 minutes
-confirm-reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	confirm: departure_time=*DEPARTURE_TIME, alternative=next; reply: duration=78 minutes
-confirm	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	departure_time=*DEPARTURE_TIME, alternative=next
 reply	ok how long would the trip be	request(duration)&request(distance)	ok how long would the trip be	distance=9.6 miles, duration=21 minutes
 reply	yes how do i get from *STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	yes how do i get from Marble Hill to Rector Street	vehicle=bus, from_stop=Marble Hill, departure_time=6:13pm, line=M101, direction=Rector Street
 apologize	yes how do i get from *STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	yes how do i get from East Broadway to Canal Street	*=notfound, from_stop=East Broadway, to_stop=Canal Street
@@ -1185,8 +1183,6 @@ reply	what time will i be at my destination	"request(arrival_time=""*ARRIVAL_TIM
 reply	what time will i be there	"request(arrival_time=""*ARRIVAL_TIME"")"	what time will i be there	arrival_time=6:37pm
 reply	what time will i get there	"request(arrival_time=""*ARRIVAL_TIME"")"	what time will i get there	arrival_time=7:32pm
 reply	what time will i get to *STOP	"inform(to_stop=""*STREET"")&request(arrival_time=""*ARRIVAL_TIME"")"	what time will i get to Dyckman Street	arrival_time=0:26pm
-confirm-reply	what time will i get to *STOP	"inform(to_stop=""*STREET"")&request(arrival_time=""*ARRIVAL_TIME"")"	what time will i get to Houston Street	confirm: to_stop=Houston Street, arrival_time=*ARRIVAL_TIME; reply: arrival_time=0:26pm
-confirm	what time will i get to *STOP	"inform(to_stop=""*STREET"")&request(arrival_time=""*ARRIVAL_TIME"")"	what time will i get to Houston Street	to_stop=Houston Street, arrival_time=*ARRIVAL_TIME
 reply	what time will i reach my destination	"request(arrival_time=""*ARRIVAL_TIME"")"	what time will i reach my destination	arrival_time=4:16pm
 reply	what time will i reach the destination	"request(arrival_time=""*ARRIVAL_TIME"")"	what time will i reach the destination	arrival_time=7:44am
 reply	what time would i arrive	"request(arrival_time=""*ARRIVAL_TIME"")"	what time would i arrive	arrival_time=7:08am
