@@ -1697,3 +1697,120 @@ apologize	thank you i need to at *NUMBER oclock and on a *VEHICLE to *STOP	"info
 request	thank you i need to at *NUMBER oclock and on a *VEHICLE to *STOP	"inform(to_stop=""*STREET"")&inform(time=""*TIME"")&inform(vehicle=""*VEHICLE"")"	thank you i need to at *NUMBER oclock and on a subway to Cathedral Parkway	from_stop=?
 confirm-request	thank you i need to at *NUMBER oclock and on a *VEHICLE to *STOP	"inform(to_stop=""*STREET"")&inform(time=""*TIME"")&inform(vehicle=""*VEHICLE"")"	thank you i need to at *NUMBER oclock and on a bus to Rector Street	confirm: to_stop=Rector Street, vehicle=bus; request: from_stop=?
 confirm	thank you i need to at *NUMBER oclock and on a *VEHICLE to *STOP	"inform(to_stop=""*STREET"")&inform(time=""*TIME"")&inform(vehicle=""*VEHICLE"")"	thank you i need to at *NUMBER oclock and on a bus to Rector Street	to_stop=Rector Street, vehicle=bus
+apologize	what about *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	what about *NUMBER in the afternoon	*=notfound, ampm=pm
+request	what about *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	what about *NUMBER in the morning	from_stop=?, to_stop=?
+confirm-request	what about *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	what about *NUMBER in the morning	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	what about *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	what about *NUMBER in the morning	ampm=am
+apologize	alternative at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	alternative at *NUMBER am	*=notfound, ampm=am
+request	alternative at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	alternative at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	alternative at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	alternative at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	alternative at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	alternative at *NUMBER pm	ampm=pm
+apologize	street at *NUMBER o'clock *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	street at *NUMBER o'clock pm	*=notfound, ampm=pm
+request	street at *NUMBER o'clock *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	street at *NUMBER o'clock pm	from_stop=?, to_stop=?
+confirm-request	street at *NUMBER o'clock *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	street at *NUMBER o'clock pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	street at *NUMBER o'clock *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	street at *NUMBER o'clock pm	ampm=pm
+apologize	same destination in the *AMPM at *NUMBER	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	same destination in the evening at *NUMBER	*=notfound, ampm=pm
+request	same destination in the *AMPM at *NUMBER	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	same destination in the morning at *NUMBER	from_stop=?, to_stop=?
+confirm-request	same destination in the *AMPM at *NUMBER	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	same destination in the morning at *NUMBER	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	same destination in the *AMPM at *NUMBER	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	same destination in the morning at *NUMBER	ampm=am
+confirm-reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	confirm: alternative=next; reply: duration=49 minutes, departure_time=6:24pm
+confirm	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	alternative=next
+apologize	can i get an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get an alternative at *NUMBER in the afternoon	*=notfound, ampm=pm
+request	can i get an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get an alternative at *NUMBER in the evening	from_stop=?, to_stop=?
+confirm-request	can i get an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get an alternative at *NUMBER in the morning	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	can i get an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get an alternative at *NUMBER in the morning	ampm=am
+apologize	can i get a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get a ride at *NUMBER pm	*=notfound, ampm=pm
+request	can i get a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get a ride at *NUMBER am	from_stop=?, to_stop=?
+confirm-request	can i get a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get a ride at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	can i get a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i get a ride at *NUMBER pm	ampm=pm
+apologize	can i how about if i leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i how about if i leave at *NUMBER pm	*=notfound, ampm=pm
+request	can i how about if i leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i how about if i leave at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	can i how about if i leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i how about if i leave at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	can i how about if i leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	can i how about if i leave at *NUMBER pm	ampm=pm
+apologize	yes i would like to leave later at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes i would like to leave later at *NUMBER pm	*=notfound, ampm=pm
+request	yes i would like to leave later at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes i would like to leave later at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	yes i would like to leave later at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes i would like to leave later at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	yes i would like to leave later at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes i would like to leave later at *NUMBER pm	ampm=pm
+apologize	no is there an option at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there an option at *NUMBER pm	*=notfound, ampm=pm
+request	no is there an option at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there an option at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	no is there an option at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there an option at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	no is there an option at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there an option at *NUMBER pm	ampm=pm
+apologize	no is there a schedule at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there a schedule at *NUMBER am	*=notfound, ampm=am
+request	no is there a schedule at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there a schedule at *NUMBER am	from_stop=?, to_stop=?
+confirm-request	no is there a schedule at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there a schedule at *NUMBER am	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	no is there a schedule at *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no is there a schedule at *NUMBER am	ampm=am
+reply	when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when is the next connection	departure_time=6:44pm
+confirm-reply	when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when is the next connection	confirm: alternative=next; reply: departure_time=6:44pm
+confirm	when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when is the next connection	alternative=next
+apologize	i need a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a *NUMBER pm	*=notfound, ampm=pm
+request	i need a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a *NUMBER am	from_stop=?, to_stop=?
+confirm-request	i need a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	i need a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a *NUMBER pm	ampm=pm
+apologize	i need a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a ride at *NUMBER pm	*=notfound, ampm=pm
+request	i need a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a ride at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	i need a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a ride at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	i need a ride at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need a ride at *NUMBER pm	ampm=pm
+apologize	i need to leave at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need to leave at *NUMBER in the afternoon	*=notfound, ampm=pm
+request	i need to leave at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need to leave at *NUMBER in the afternoon	from_stop=?, to_stop=?
+confirm-request	i need to leave at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need to leave at *NUMBER in the evening	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	i need to leave at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i need to leave at *NUMBER in the evening	ampm=pm
+apologize	for *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	for *NUMBER am	*=notfound, ampm=am
+request	for *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	for *NUMBER am	from_stop=?, to_stop=?
+confirm-request	for *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	for *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	for *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	for *NUMBER pm	ampm=pm
+apologize	no *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no *NUMBER pm	*=notfound, ampm=pm
+request	no *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no *NUMBER am	from_stop=?, to_stop=?
+confirm-request	no *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	no *NUMBER *AMPM	"inform(ampm=""*AMPM"")"	no *NUMBER pm	ampm=pm
+apologize	yes *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes *NUMBER pm	*=notfound, ampm=pm
+request	yes *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	yes *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	yes *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	yes *NUMBER pm	ampm=pm
+apologize	is there an alternate route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternate route at *NUMBER am	*=notfound, ampm=am
+request	is there an alternate route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternate route at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	is there an alternate route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternate route at *NUMBER am	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	is there an alternate route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternate route at *NUMBER am	ampm=am
+apologize	is there an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative at *NUMBER in the morning	*=notfound, ampm=am
+request	is there an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative at *NUMBER in the evening	from_stop=?, to_stop=?
+confirm-request	is there an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative at *NUMBER in the morning	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	is there an alternative at *NUMBER in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative at *NUMBER in the morning	ampm=am
+apologize	is there an alternative route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative route at *NUMBER pm	*=notfound, ampm=pm
+request	is there an alternative route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative route at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	is there an alternative route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative route at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	is there an alternative route at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an alternative route at *NUMBER pm	ampm=pm
+apologize	is there an option at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option at *NUMBER pm	*=notfound, ampm=pm
+request	is there an option at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option at *NUMBER am	from_stop=?, to_stop=?
+confirm-request	is there an option at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option at *NUMBER am	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	is there an option at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option at *NUMBER am	ampm=am
+apologize	is there an option for *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option for *NUMBER o'clock in the afternoon	*=notfound, ampm=pm
+request	is there an option for *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option for *NUMBER o'clock in the afternoon	from_stop=?, to_stop=?
+confirm-request	is there an option for *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option for *NUMBER o'clock in the morning	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	is there an option for *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there an option for *NUMBER o'clock in the morning	ampm=am
+apologize	is there a time i can leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there a time i can leave at *NUMBER am	*=notfound, ampm=am
+request	is there a time i can leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there a time i can leave at *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	is there a time i can leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there a time i can leave at *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	is there a time i can leave at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there a time i can leave at *NUMBER pm	ampm=pm
+apologize	is there *NUMBER at *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there *NUMBER at *NUMBER o'clock in the evening	*=notfound, ampm=pm
+request	is there *NUMBER at *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there *NUMBER at *NUMBER o'clock in the evening	from_stop=?, to_stop=?
+confirm-request	is there *NUMBER at *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there *NUMBER at *NUMBER o'clock in the afternoon	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	is there *NUMBER at *NUMBER o'clock in the *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	is there *NUMBER at *NUMBER o'clock in the afternoon	ampm=pm
+confirm-reply	what time will i get to *STOP	"inform(to_stop=""*STREET"")&request(arrival_time=""*ARRIVAL_TIME"")"	what time will i get to Roosevelt Island	confirm: to_stop=Roosevelt Island; reply: arrival_time=5:43pm
+confirm	what time will i get to *STOP	"inform(to_stop=""*STREET"")&request(arrival_time=""*ARRIVAL_TIME"")"	what time will i get to Roosevelt Island	to_stop=Roosevelt Island
+reply	and what time would the next connection be	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	and what time would the next connection be	departure_time=3:55pm
+confirm-reply	and what time would the next connection be	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	and what time would the next connection be	confirm: alternative=next; reply: departure_time=3:55pm
+confirm	and what time would the next connection be	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	and what time would the next connection be	alternative=next
+apologize	ok what if i leave at around *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	ok what if i leave at around *NUMBER pm	*=notfound, ampm=pm
+request	ok what if i leave at around *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	ok what if i leave at around *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	ok what if i leave at around *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	ok what if i leave at around *NUMBER pm	confirm: ampm=pm; request: from_stop=?, to_stop=?
+confirm	ok what if i leave at around *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	ok what if i leave at around *NUMBER pm	ampm=pm
+reply	when will the next *VEHICLE	"inform(vehicle=""*VEHICLE"")&request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when will the next bus	departure_time=10:29pm
+confirm-reply	when will the next *VEHICLE	"inform(vehicle=""*VEHICLE"")&request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when will the next subway	confirm: vehicle=subway, alternative=next; reply: departure_time=10:29pm
+confirm	when will the next *VEHICLE	"inform(vehicle=""*VEHICLE"")&request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when will the next subway	vehicle=subway, alternative=next
+apologize	i would like a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like a *NUMBER am	*=notfound, ampm=am
+request	i would like a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like a *NUMBER pm	from_stop=?, to_stop=?
+confirm-request	i would like a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like a *NUMBER am	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	i would like a *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like a *NUMBER am	ampm=am
+apologize	i would like to leave or depart at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like to leave or depart at *NUMBER pm	*=notfound, ampm=pm
+request	i would like to leave or depart at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like to leave or depart at *NUMBER am	from_stop=?, to_stop=?
+confirm-request	i would like to leave or depart at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like to leave or depart at *NUMBER am	confirm: ampm=am; request: from_stop=?, to_stop=?
+confirm	i would like to leave or depart at *NUMBER *AMPM	"inform(time=""*TIME"")&inform(ampm=""*AMPM"")"	i would like to leave or depart at *NUMBER am	ampm=am
