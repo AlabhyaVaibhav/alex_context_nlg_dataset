@@ -13,3 +13,5 @@
 876156 -- final run (with the *-bug... stalled after the first 595 rows)
             - ignoring any animated variants
             - logging validation
+881464 -- fixed *-bug, stalled after a few days
+883061 -- ditto, stalled after a day
