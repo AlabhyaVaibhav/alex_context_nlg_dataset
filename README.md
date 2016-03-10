@@ -17,4 +17,4 @@ Preparing the data for Crowdflower
 4) Generating reply tasks:
 
     alex/alex/tools/crowdflower/nlg_job/generate_reply_tasks.py abstract/abstract.<id>.tsv > tasks/tasks.<id>.tsv
-
+    (head -n 1 tasks/tasks.<id>.tsv && tail -n +2 tasks/tasks.<id>.tsv | shuf) > tasks/tasks.<id>-shuffled.tsv
