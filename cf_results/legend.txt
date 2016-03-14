@@ -15,3 +15,5 @@
             - logging validation
 881464 -- fixed *-bug, stalled after a few days
 883061 -- ditto, stalled after a day
+883340 -- many bugfixes regarding time
+883979 -- ditto, just 7 tasks that only required 1 judgment
