@@ -17,3 +17,6 @@
 883061 -- ditto, stalled after a day
 883340 -- many bugfixes regarding time
 883979 -- ditto, just 7 tasks that only required 1 judgment
+======
+887262 -- repeatedly assigned tasks, many more checking fixes (more lenient towards time, stricter to common mistakes), 25 tasks requiring 3 judgments
+887586 -- normalized space in regexes for better matching + bugfixes + still more lenient towards time, 119 tasks requiring 2 judgments
