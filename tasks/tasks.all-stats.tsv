@@ -1,74 +1,84 @@
 29	apologize	*, alternative
-1	apologize	*, alternative, ampm, vehicle
+1	apologize	*, alternative, ampm, departure_time, vehicle
 2	apologize	*, alternative, from_stop
 1	apologize	*, alternative, from_stop, to_stop
 1	apologize	*, alternative, vehicle
-15	apologize	*, ampm, departure_time
-5	apologize	*, ampm, departure_time, vehicle
-1	apologize	*, ampm, to_stop
-4	apologize	*, ampm, vehicle
+3	apologize	*, ampm
+46	apologize	*, ampm, departure_time
+1	apologize	*, ampm, departure_time, to_stop
+11	apologize	*, ampm, departure_time, vehicle
 1	apologize	*, arrival_time, to_stop
-6	apologize	*, departure_time
-12	apologize	*, departure_time_rel
-48	apologize	*, from_stop
-84	apologize	*, from_stop, to_stop
+8	apologize	*, departure_time
+15	apologize	*, departure_time_rel
+2	apologize	*, departure_time, to_stop
+2	apologize	*, departure_time, to_stop, vehicle
+47	apologize	*, from_stop
+83	apologize	*, from_stop, to_stop
 11	apologize	*, from_stop, to_stop, vehicle
 2	apologize	*, from_stop, vehicle
-70	apologize	*, to_stop
-3	apologize	*, to_stop, vehicle
-48	apologize	*, vehicle
-31	confirm	alternative
-1	confirm	alternative, ampm, vehicle
-1	confirm	alternative, departure_time
+67	apologize	*, to_stop
+1	apologize	*, to_stop, vehicle
+46	apologize	*, vehicle
+34	confirm	alternative
+1	confirm	alternative, ampm, departure_time, vehicle
 2	confirm	alternative, from_stop
 1	confirm	alternative, from_stop, to_stop
-1	confirm	alternative, vehicle
-15	confirm	ampm, departure_time
-5	confirm	ampm, departure_time, vehicle
+2	confirm	alternative, vehicle
+3	confirm	ampm
+48	confirm	ampm, departure_time
+1	confirm	ampm, departure_time, to_stop
+11	confirm	ampm, departure_time, vehicle
 1	confirm	ampm, from_stop, to_stop, vehicle
-1	confirm	ampm, to_stop
-4	confirm	ampm, vehicle
-2	confirm	arrival_time, to_stop
-7	confirm	departure_time
-12	confirm	departure_time_rel
-48	confirm	from_stop
-89	confirm	from_stop, to_stop
+1	confirm	arrival_time, to_stop
+8	confirm	departure_time
+15	confirm	departure_time_rel
+2	confirm	departure_time, to_stop
+2	confirm	departure_time, to_stop, vehicle
+47	confirm	from_stop
+88	confirm	from_stop, to_stop
 12	confirm	from_stop, to_stop, vehicle
 2	confirm	from_stop, vehicle
-75	confirm	to_stop
-3	confirm	to_stop, vehicle
-50	confirm	vehicle
-1	confirm-reply	confirm: alternative, departure_time reply: duration
+2	confirm-reply	confirm: alternative reply: departure_time
+1	confirm-reply	confirm: alternative reply: departure_time, duration
 2	confirm-reply	confirm: alternative reply: duration
+1	confirm-reply	confirm: alternative, vehicle reply: departure_time
+2	confirm-reply	confirm: ampm, departure_time reply: duration
 1	confirm-reply	confirm: ampm, from_stop, to_stop, vehicle reply: duration
-1	confirm-reply	confirm: arrival_time, to_stop reply: arrival_time
-1	confirm-reply	confirm: departure_time reply: duration
 1	confirm-reply	confirm: from_stop, to_stop reply: distance
 1	confirm-reply	confirm: from_stop, to_stop reply: distance, duration
 3	confirm-reply	confirm: from_stop, to_stop reply: duration
 1	confirm-reply	confirm: from_stop, to_stop, vehicle reply: duration
+1	confirm-reply	confirm: to_stop reply: arrival_time
 5	confirm-reply	confirm: to_stop reply: duration
 2	confirm-reply	confirm: vehicle reply: duration
-15	confirm-request	confirm: ampm, departure_time request: from_stop, to_stop
-5	confirm-request	confirm: ampm, departure_time, vehicle request: from_stop, to_stop
-1	confirm-request	confirm: ampm, to_stop request: from_stop
-4	confirm-request	confirm: ampm, vehicle request: from_stop, to_stop
+46	confirm-request	confirm: ampm, departure_time request: from_stop, to_stop
+1	confirm-request	confirm: ampm, departure_time, to_stop request: from_stop
+11	confirm-request	confirm: ampm, departure_time, vehicle request: from_stop, to_stop
+3	confirm-request	confirm: ampm request: from_stop, to_stop
 1	confirm-request	confirm: arrival_time, to_stop request: from_stop
-12	confirm-request	confirm: departure_time_rel request: from_stop, to_stop
-6	confirm-request	confirm: departure_time request: from_stop, to_stop
-48	confirm-request	confirm: from_stop request: to_stop
+15	confirm-request	confirm: departure_time_rel request: from_stop, to_stop
+8	confirm-request	confirm: departure_time request: from_stop, to_stop
+2	confirm-request	confirm: departure_time, to_stop request: from_stop
+2	confirm-request	confirm: departure_time, to_stop, vehicle request: from_stop
+47	confirm-request	confirm: from_stop request: to_stop
 2	confirm-request	confirm: from_stop, vehicle request: to_stop
-70	confirm-request	confirm: to_stop request: from_stop
-3	confirm-request	confirm: to_stop, vehicle request: from_stop
-48	confirm-request	confirm: vehicle request: from_stop, to_stop
+67	confirm-request	confirm: to_stop request: from_stop
+1	confirm-request	confirm: to_stop, vehicle request: from_stop
+46	confirm-request	confirm: vehicle request: from_stop, to_stop
+73	confirm	to_stop
+1	confirm	to_stop, vehicle
+48	confirm	vehicle
 26	reply	arrival_time
 10	reply	arrival_time, duration
-383	reply	departure_time, direction, from_stop, line, vehicle
+6	reply	departure_time
+380	reply	departure_time, direction, from_stop, line, vehicle
+1	reply	departure_time, duration
 26	reply	distance
 7	reply	distance, duration
 6	reply	distance, num_transfers
-76	reply	duration
+75	reply	duration
 12	reply	num_transfers
-75	request	from_stop
-90	request	from_stop, to_stop
-50	request	to_stop
+74	request	from_stop
+129	request	from_stop, to_stop
+49	request	to_stop
+1	type	da

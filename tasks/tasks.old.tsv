@@ -1,466 +1,517 @@
 type	abstr_utt	abstr_da	utt	da
 reply	ask about the time requirement	request(duration)	ask about the time requirement	duration=43 minutes
-reply	what about the time requirements	request(duration)	what about the time requirements	duration=62 minutes
-reply	what about time requirements to find out the next connection	"request(duration)&inform(alternative=""next"")"	what about time requirements to find out the next connection	duration=72 minutes
-confirm-reply	what about time requirements to find out the next connection	"request(duration)&inform(alternative=""next"")"	what about time requirements to find out the next connection	confirm: alternative=next; reply: duration=72 minutes
+reply	what about the *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	what about the five pm connection	departure_time=5:19pm, from_stop=Houston Street, direction=Union Square, line=C, vehicle=subway
+apologize	what about the *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	what about the eleven am connection	*=notfound, departure_time=11:00, ampm=am
+request	what about the *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	what about the nine pm connection	from_stop=?, to_stop=?
+confirm-request	what about the *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	what about the three pm connection	confirm: departure_time=3:00, ampm=pm; request: from_stop=?, to_stop=?
+confirm	what about the *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	what about the three pm connection	departure_time=3:00, ampm=pm
+reply	what about the time requirements	request(duration)	what about the time requirements	duration=67 minutes
+reply	what about time requirements to find out the next connection	"request(duration)&inform(alternative=""next"")"	what about time requirements to find out the next connection	duration=49 minutes
+confirm-reply	what about time requirements to find out the next connection	"request(duration)&inform(alternative=""next"")"	what about time requirements to find out the next connection	confirm: alternative=next; reply: duration=49 minutes
 confirm	what about time requirements to find out the next connection	"request(duration)&inform(alternative=""next"")"	what about time requirements to find out the next connection	alternative=next
-reply	i also want to know about time requirements	request(duration)	i also want to know about time requirements	duration=52 minutes
-reply	ok and how many transfers will i need	request(num_transfers)	ok and how many transfers will i need	num_transfers=0
-reply	ok and i need to find out the connection in a *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	ok and i need to find out the connection in a half an hour	direction=Franklin Street, from_stop=Lincoln Center, vehicle=subway, departure_time=10:01am, line=4
+reply	i also want to know about time requirements	request(duration)	i also want to know about time requirements	duration=15 minutes
+reply	ok and how many transfers will i need	request(num_transfers)	ok and how many transfers will i need	num_transfers=2
+reply	ok and i need to find out the connection in a *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	ok and i need to find out the connection in a half an hour	vehicle=bus, departure_time=11:02pm, direction=Penn Station, line=M31, from_stop=Chambers Street
 apologize	ok and i need to find out the connection in a *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	ok and i need to find out the connection in a half an hour	*=notfound, departure_time_rel=0:30
 request	ok and i need to find out the connection in a *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	ok and i need to find out the connection in a half an hour	from_stop=?, to_stop=?
 confirm-request	ok and i need to find out the connection in a *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	ok and i need to find out the connection in a half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	ok and i need to find out the connection in a *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	ok and i need to find out the connection in a half an hour	departure_time_rel=0:30
-reply	what are the number of transfers	request(num_transfers)	what are the number of transfers	num_transfers=2
-reply	what are the time requirements	request(duration)	what are the time requirements	duration=25 minutes
-reply	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Herald Square to ro	vehicle=bus, line=M11, departure_time=1:06pm, from_stop=Herald Square, direction=Port Authority Bus Terminal
-apologize	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Rockefeller Center to ro	*=notfound, from_stop=Rockefeller Center
-request	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Essex Street to ro	to_stop=?
-confirm-request	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Marble Hill to ro	confirm: from_stop=Marble Hill; request: to_stop=?
-confirm	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Marble Hill to ro	from_stop=Marble Hill
-reply	yes can you tell me the distance of the trip	request(distance)	yes can you tell me the distance of the trip	distance=7.6 miles
-reply	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at three pm	vehicle=subway, departure_time=3:19pm, from_stop=Times Square, line=G, direction=City Hall
-apologize	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at ten pm	*=notfound, departure_time=10:00, ampm=pm
-request	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at ten am	from_stop=?, to_stop=?
-confirm-request	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at ten pm	confirm: departure_time=10:00, ampm=pm; request: from_stop=?, to_stop=?
-confirm	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at ten pm	departure_time=10:00, ampm=pm
-reply	last connection	"inform(alternative=""last"")"	last connection	direction=Bleecker Street, from_stop=Union Square, departure_time=12:14pm, vehicle=bus, line=M42
+reply	what are the number of transfers	request(num_transfers)	what are the number of transfers	num_transfers=0
+reply	what are the time requirements	request(duration)	what are the time requirements	duration=17 minutes
+reply	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Delancey Street to ro	vehicle=subway, line=J, departure_time=10:08am, direction=Bleecker Street, from_stop=Delancey Street
+apologize	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Dyckman Street to ro	*=notfound, from_stop=Dyckman Street
+request	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Cathedral Parkway to ro	to_stop=?
+confirm-request	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Wall Street to ro	confirm: from_stop=Wall Street; request: to_stop=?
+confirm	yes can i have a connection to from *STOP to ro	"inform(from_stop=""*STREET"")"	yes can i have a connection to from Wall Street to ro	from_stop=Wall Street
+reply	yes can you tell me the distance of the trip	request(distance)	yes can you tell me the distance of the trip	distance=3.7 miles
+reply	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at six pm	departure_time=6:07pm, line=M79, from_stop=Union Square, direction=Inwood, vehicle=bus
+apologize	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at seven am	*=notfound, departure_time=7:00, ampm=am
+request	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at ten pm	from_stop=?, to_stop=?
+confirm-request	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at five pm	confirm: departure_time=5:00, ampm=pm; request: from_stop=?, to_stop=?
+confirm	best connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	best connection at five pm	departure_time=5:00, ampm=pm
+reply	last connection	"inform(alternative=""last"")"	last connection	departure_time=7:01am, direction=Grand Central, line=D, from_stop=Cathedral Parkway, vehicle=subway
 apologize	last connection	"inform(alternative=""last"")"	last connection	*=notfound, alternative=last
 confirm	last connection	"inform(alternative=""last"")"	last connection	alternative=last
-reply	lost connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	lost connection from Prince Street to Penn Station	departure_time=4:07pm, direction=Penn Station, line=4, from_stop=Prince Street, vehicle=subway
-apologize	lost connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	lost connection from Herald Square to Astor Place	*=notfound, from_stop=Herald Square, to_stop=Astor Place
-confirm	lost connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	lost connection from Inwood to Delancey Street	from_stop=Inwood, to_stop=Delancey Street
-reply	next connection	"inform(alternative=""next"")"	next connection	direction=Penn Station, line=D, from_stop=Columbia University, vehicle=subway, departure_time=6:17pm
+reply	lost connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	lost connection from Columbia University to Penn Station	from_stop=Columbia University, line=M20, departure_time=8:01pm, vehicle=bus, direction=Penn Station
+apologize	lost connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	lost connection from Cortlandt Street to Franklin Street	*=notfound, from_stop=Cortlandt Street, to_stop=Franklin Street
+confirm	lost connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	lost connection from Union Square to Franklin Street	from_stop=Union Square, to_stop=Franklin Street
+reply	next connection	"inform(alternative=""next"")"	next connection	line=2, vehicle=subway, departure_time=9:13pm, from_stop=Union Square, direction=Essex Street
 apologize	next connection	"inform(alternative=""next"")"	next connection	*=notfound, alternative=next
 confirm	next connection	"inform(alternative=""next"")"	next connection	alternative=next
-reply	*VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	bus connection from Essex Street to Fulton Street	vehicle=bus, direction=Fulton Street, departure_time=11:05am, from_stop=Essex Street, line=M22
-apologize	*VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	bus connection from Bowery to Astor Place	*=notfound, from_stop=Bowery, to_stop=Astor Place, vehicle=bus
-confirm	*VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	bus connection from Inwood to Bowery	from_stop=Inwood, to_stop=Bowery, vehicle=bus
-reply	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	bus connection	vehicle=bus, departure_time=11:09am, from_stop=Columbus Circle, direction=Fulton Street, line=M102
-apologize	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	subway connection	*=notfound, vehicle=subway
+reply	*VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	bus connection from World Trade Center to Bryant Park	line=M102, direction=Bryant Park, departure_time=11:06am, from_stop=World Trade Center, vehicle=bus
+apologize	*VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	bus connection from Delancey Street to Grand Street	*=notfound, from_stop=Delancey Street, to_stop=Grand Street, vehicle=bus
+confirm	*VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	subway connection from Wall Street to Central Park	from_stop=Wall Street, to_stop=Central Park, vehicle=subway
+reply	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	subway connection	direction=Bryant Park, from_stop=Canal Street, line=1, vehicle=subway, departure_time=4:13pm
+apologize	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	bus connection	*=notfound, vehicle=bus
 request	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	subway connection	from_stop=?, to_stop=?
 confirm-request	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	subway connection	confirm: vehicle=subway; request: from_stop=?, to_stop=?
 confirm	*VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	subway connection	vehicle=subway
-reply	what connection will i be in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what connection will i be in half an hour	direction=Canal Street, vehicle=subway, from_stop=Columbus Circle, departure_time=11:02am, line=1
+reply	what connection will i be in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what connection will i be in half an hour	from_stop=Fulton Street, vehicle=bus, direction=Chambers Street, line=M66, departure_time=7:01am
 apologize	what connection will i be in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what connection will i be in half an hour	*=notfound, departure_time_rel=0:30
 request	what connection will i be in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what connection will i be in half an hour	from_stop=?, to_stop=?
 confirm-request	what connection will i be in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what connection will i be in half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	what connection will i be in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what connection will i be in half an hour	departure_time_rel=0:30
-reply	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in one minutes	from_stop=Cathedral Parkway, departure_time=1:05pm, vehicle=bus, line=M98, direction=Grand Central
-apologize	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in one minutes	*=notfound, departure_time_rel=1:00
-request	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in four minutes	from_stop=?, to_stop=?
-confirm-request	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in zero minutes	confirm: departure_time_rel=0:00; request: from_stop=?, to_stop=?
-confirm	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in zero minutes	departure_time_rel=0:00
-reply	duration distance of trip	request(distance)	duration distance of trip	distance=8.6 miles
-reply	the distance of the trip	request(distance)	the distance of the trip	distance=7.3 miles
-reply	how far is it	request(distance)	how far is it	distance=6.6 miles
-reply	how far is that	request(distance)	how far is that	distance=10.6 miles
-reply	how far is the trip	request(distance)	how far is the trip	distance=1.5 miles
-reply	how far what is the distance of this trip	request(distance)	how far what is the distance of this trip	distance=10.9 miles
-reply	how far will i be travelling	request(distance)	how far will i be travelling	distance=9.7 miles
-reply	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for bus connection	from_stop=Columbia University, direction=Broad Street, departure_time=6:08pm, line=M96, vehicle=bus
+reply	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in fifteen minutes	direction=Grand Street, vehicle=subway, departure_time=8:06pm, line=1, from_stop=Broad Street
+apologize	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in fifteen minutes	*=notfound, departure_time_rel=0:15
+request	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in thirty minutes	from_stop=?, to_stop=?
+confirm-request	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in fifteen minutes	confirm: departure_time_rel=0:15; request: from_stop=?, to_stop=?
+confirm	yes connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	yes connection in fifteen minutes	departure_time_rel=0:15
+reply	duration distance of trip	request(distance)	duration distance of trip	distance=10.5 miles
+reply	the distance of the trip	request(distance)	the distance of the trip	distance=2.3 miles
+reply	when does it leave	"request(departure_time=""*DEPARTURE_TIME"")"	when does it leave	departure_time=7:04pm
+reply	how far is it	request(distance)	how far is it	distance=11.3 miles
+reply	how far is that	request(distance)	how far is that	distance=9.8 miles
+reply	how far is the trip	request(distance)	how far is the trip	distance=3.7 miles
+reply	how far what is the distance of this trip	request(distance)	how far what is the distance of this trip	distance=11.2 miles
+reply	how far will i be travelling	request(distance)	how far will i be travelling	distance=0.4 miles
+reply	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for bus connection	line=M5, vehicle=bus, from_stop=Astor Place, departure_time=8:17am, direction=Houston Street
 apologize	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for subway connection	*=notfound, vehicle=subway
 request	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for bus connection	from_stop=?, to_stop=?
-confirm-request	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for bus connection	confirm: vehicle=bus; request: from_stop=?, to_stop=?
-confirm	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for bus connection	vehicle=bus
-reply	connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	connection from Washington Square to Inwood	vehicle=subway, line=F, direction=Inwood, from_stop=Washington Square, departure_time=11:18am
-apologize	connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	connection from Delancey Street to Franklin Street	*=notfound, from_stop=Delancey Street, to_stop=Franklin Street
-confirm	connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	connection from Cortlandt Street to Washington Square	from_stop=Cortlandt Street, to_stop=Washington Square
-reply	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Wall Street	departure_time=7:12am, line=M31, vehicle=bus, from_stop=Park Place, direction=Wall Street
-apologize	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Marble Hill	*=notfound, to_stop=Marble Hill
-request	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Port Authority Bus Terminal	from_stop=?
-confirm-request	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Washington Square	confirm: to_stop=Washington Square; request: from_stop=?
-confirm	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Washington Square	to_stop=Washington Square
-reply	about how long does it take	request(duration)	about how long does it take	duration=57 minutes
-reply	and how many transfers is there	request(num_transfers)	and how many transfers is there	num_transfers=2
+confirm-request	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for subway connection	confirm: vehicle=subway; request: from_stop=?, to_stop=?
+confirm	looking for *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	looking for subway connection	vehicle=subway
+reply	connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	connection from Columbus Circle to Cathedral Parkway	direction=Cathedral Parkway, vehicle=bus, departure_time=9:13am, from_stop=Columbus Circle, line=M98
+apologize	connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	connection from Bowery to Dyckman Street	*=notfound, from_stop=Bowery, to_stop=Dyckman Street
+confirm	connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	connection from Bowling Green to Essex Street	from_stop=Bowling Green, to_stop=Essex Street
+reply	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Union Square	vehicle=bus, line=M14, departure_time=9:18am, from_stop=Chambers Street, direction=Union Square
+apologize	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to City Hall	*=notfound, to_stop=City Hall
+request	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to Bowling Green	from_stop=?
+confirm-request	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to World Trade Center	confirm: to_stop=World Trade Center; request: from_stop=?
+confirm	i'm headed to *STOP	"inform(to_stop=""*STREET"")"	i'm headed to World Trade Center	to_stop=World Trade Center
+reply	about how long does it take	request(duration)	about how long does it take	duration=54 minutes
+reply	and how many transfers is there	request(num_transfers)	and how many transfers is there	num_transfers=1
 reply	and how many transfers	request(num_transfers)	and how many transfers	num_transfers=1
-reply	and how many transfers would that be	request(num_transfers)	and how many transfers would that be	num_transfers=0
-reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	duration=27 minutes
-confirm-reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	confirm: departure_time=*DEPARTURE_TIME, alternative=next; reply: duration=27 minutes
-confirm	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	departure_time=*DEPARTURE_TIME, alternative=next
-reply	and i want to know about the duration of the trip the distance of the trip and	request(duration)&request(distance)	and i want to know about the duration of the trip the distance of the trip and	distance=6.2 miles, duration=50 minutes
-reply	and i would like to know the duration of the trip and find out the connections at *NUMBER *NUMBER pm	"inform(time=""*TIME"")&request(duration)"	and i would like to know the duration of the trip and find out the connections at one one pm	duration=38 minutes
-reply	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by subway	line=G, departure_time=8:12am, vehicle=subway, from_stop=Port Authority Bus Terminal, direction=Bleecker Street
-apologize	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by bus	*=notfound, vehicle=bus
-request	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by subway	from_stop=?, to_stop=?
-confirm-request	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by bus	confirm: vehicle=bus; request: from_stop=?, to_stop=?
-confirm	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by bus	vehicle=bus
-reply	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by subway	direction=Essex Street, line=3, departure_time=8:17am, from_stop=Canal Street, vehicle=subway
-apologize	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by subway	*=notfound, vehicle=subway
+reply	and how many transfers would that be	request(num_transfers)	and how many transfers would that be	num_transfers=1
+reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	duration=53 minutes, departure_time=7:28am
+confirm-reply	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	confirm: alternative=next; reply: duration=53 minutes, departure_time=7:28am
+confirm	ok how long will that take and when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&request(duration)&inform(alternative=""next"")"	ok how long will that take and when is the next connection	alternative=next
+reply	and i want to know about the duration of the trip the distance of the trip and	request(duration)&request(distance)	and i want to know about the duration of the trip the distance of the trip and	distance=10.4 miles, duration=58 minutes
+reply	and i would like to know the duration of the trip and find out the connections at *NUMBER *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")&request(duration)"	and i would like to know the duration of the trip and find out the connections at eight thirty pm	duration=60 minutes
+confirm-reply	and i would like to know the duration of the trip and find out the connections at *NUMBER *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")&request(duration)"	and i would like to know the duration of the trip and find out the connections at seven thirty am	confirm: departure_time=7:30, ampm=am; reply: duration=60 minutes
+confirm	and i would like to know the duration of the trip and find out the connections at *NUMBER *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")&request(duration)"	and i would like to know the duration of the trip and find out the connections at seven thirty am	departure_time=7:30, ampm=am
+reply	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by subway	from_stop=Dyckman Street, line=M, direction=Central Park, vehicle=subway, departure_time=11:03am
+apologize	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by subway	*=notfound, vehicle=subway
+request	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by bus	from_stop=?, to_stop=?
+confirm-request	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by subway	confirm: vehicle=subway; request: from_stop=?, to_stop=?
+confirm	but i wanna go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i wanna go by subway	vehicle=subway
+reply	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by bus	from_stop=Wall Street, vehicle=bus, departure_time=12:09pm, direction=Herald Square, line=M106
+apologize	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by bus	*=notfound, vehicle=bus
 request	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by bus	from_stop=?, to_stop=?
-confirm-request	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by bus	confirm: vehicle=bus; request: from_stop=?, to_stop=?
-confirm	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by bus	vehicle=bus
-reply	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by subway	line=2, direction=Inwood, departure_time=3:14pm, from_stop=Houston Street, vehicle=subway
+confirm-request	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by subway	confirm: vehicle=subway; request: from_stop=?, to_stop=?
+confirm	but i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go by subway	vehicle=subway
+reply	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by subway	line=7, from_stop=Delancey Street, vehicle=subway, departure_time=7:10am, direction=Cathedral Parkway
 apologize	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by subway	*=notfound, vehicle=subway
 request	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by subway	from_stop=?, to_stop=?
-confirm-request	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by bus	confirm: vehicle=bus; request: from_stop=?, to_stop=?
-confirm	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by bus	vehicle=bus
-reply	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by subway	vehicle=subway, line=3, from_stop=Columbus Circle, departure_time=10:06pm, direction=Franklin Street
-apologize	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by bus	*=notfound, vehicle=bus
+confirm-request	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by subway	confirm: vehicle=subway; request: from_stop=?, to_stop=?
+confirm	but i want to go to by by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	but i want to go to by by subway	vehicle=subway
+reply	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by bus	direction=Broad Street, vehicle=bus, line=M100, from_stop=Fulton Street, departure_time=7:17am
+apologize	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by subway	*=notfound, vehicle=subway
 request	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by bus	from_stop=?, to_stop=?
-confirm-request	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by subway	confirm: vehicle=subway; request: from_stop=?, to_stop=?
-confirm	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by subway	vehicle=subway
-reply	could i get the duration	request(duration)	could i get the duration	duration=61 minutes
-reply	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from World Trade Center	from_stop=World Trade Center, direction=East Broadway, departure_time=11:01am, line=M, vehicle=subway
-apologize	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Park Place	*=notfound, from_stop=Park Place
-request	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Essex Street	to_stop=?
-confirm-request	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Columbus Circle	confirm: from_stop=Columbus Circle; request: to_stop=?
-confirm	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Columbus Circle	from_stop=Columbus Circle
-reply	yes i need a connection a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	yes i need a connection a subway connection from Essex Street to Houston Street	vehicle=subway, from_stop=Essex Street, departure_time=10:01am, direction=Houston Street, line=5
-apologize	yes i need a connection a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	yes i need a connection a subway connection from Columbia University to Grand Street	*=notfound, from_stop=Columbia University, to_stop=Grand Street, vehicle=subway
-confirm	yes i need a connection a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	yes i need a connection a bus connection from Wall Street to Columbus Circle	from_stop=Wall Street, to_stop=Columbus Circle, vehicle=bus
-reply	yes i would like to know when i could catch the next transportation from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	yes i would like to know when i could catch the next transportation from Herald Square	line=M34, from_stop=Herald Square, direction=Prince Street, departure_time=10:15am, vehicle=bus
-apologize	yes i would like to know when i could catch the next transportation from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	yes i would like to know when i could catch the next transportation from Canal Street	*=notfound, from_stop=Canal Street, alternative=next
-confirm	yes i would like to know when i could catch the next transportation from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	yes i would like to know when i could catch the next transportation from Marble Hill	from_stop=Marble Hill, alternative=next
-reply	what if i leave at *NUMBER pm	"inform(time=""*TIME"")"	what if i leave at zero pm	line=M103, vehicle=bus, direction=Rockefeller Center, departure_time=0:10pm, from_stop=Broad Street
-reply	connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in half an hour	from_stop=Grand Street, line=J, departure_time=8:03am, vehicle=subway, direction=Penn Station
+confirm-request	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by bus	confirm: vehicle=bus; request: from_stop=?, to_stop=?
+confirm	can i go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	can i go by bus	vehicle=bus
+reply	could i get the duration	request(duration)	could i get the duration	duration=40 minutes
+reply	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Penn Station	from_stop=Penn Station, departure_time=5:14pm, vehicle=bus, direction=Lincoln Center, line=M5
+apologize	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Broad Street	*=notfound, from_stop=Broad Street
+request	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Chambers Street	to_stop=?
+confirm-request	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Houston Street	confirm: from_stop=Houston Street; request: to_stop=?
+confirm	so i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	so i want to find a connection from Houston Street	from_stop=Houston Street
+reply	yes i need a connection a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	yes i need a connection a subway connection from Dyckman Street to World Trade Center	departure_time=10:11pm, from_stop=Dyckman Street, vehicle=subway, direction=World Trade Center, line=M
+apologize	yes i need a connection a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	yes i need a connection a subway connection from Columbus Circle to Herald Square	*=notfound, from_stop=Columbus Circle, to_stop=Herald Square, vehicle=subway
+confirm	yes i need a connection a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	yes i need a connection a bus connection from Columbia University to Canal Street	from_stop=Columbia University, to_stop=Canal Street, vehicle=bus
+reply	yes i would like to know when i could catch the next transportation from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	yes i would like to know when i could catch the next transportation from Bowery	direction=City Hall, vehicle=subway, line=C, departure_time=8:13pm, from_stop=Bowery
+apologize	yes i would like to know when i could catch the next transportation from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	yes i would like to know when i could catch the next transportation from Park Place	*=notfound, from_stop=Park Place, alternative=next
+confirm	yes i would like to know when i could catch the next transportation from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	yes i would like to know when i could catch the next transportation from Columbus Circle	from_stop=Columbus Circle, alternative=next
+reply	what if i leave at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	what if i leave at twelve pm	direction=Delancey Street, departure_time=12:08pm, line=Z, vehicle=subway, from_stop=Port Authority Bus Terminal
+apologize	what if i leave at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	what if i leave at five pm	*=notfound, departure_time=5:00, ampm=pm
+request	what if i leave at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	what if i leave at one pm	from_stop=?, to_stop=?
+confirm-request	what if i leave at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	what if i leave at five pm	confirm: departure_time=5:00, ampm=pm; request: from_stop=?, to_stop=?
+confirm	what if i leave at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	what if i leave at five pm	departure_time=5:00, ampm=pm
+reply	connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in half an hour	departure_time=8:12pm, direction=Bryant Park, vehicle=subway, line=R, from_stop=Essex Street
 apologize	connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in half an hour	*=notfound, departure_time_rel=0:30
 request	connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in half an hour	from_stop=?, to_stop=?
 confirm-request	connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in half an hour	departure_time_rel=0:30
-reply	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in one minutes	line=E, departure_time=9:18pm, direction=Bleecker Street, from_stop=Franklin Street, vehicle=subway
-apologize	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in four minutes	*=notfound, departure_time_rel=4:00
-request	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in four minutes	from_stop=?, to_stop=?
-confirm-request	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in three minutes	confirm: departure_time_rel=3:00; request: from_stop=?, to_stop=?
-confirm	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in three minutes	departure_time_rel=3:00
-reply	depart in *NUMBER minutes	"inform(time_rel=""*TIME_REL"")"	depart in one minutes	from_stop=Astor Place, departure_time=3:03pm, direction=Rector Street, vehicle=subway, line=N
-reply	what is duration	request(duration)	what is duration	duration=49 minutes
-reply	what is the connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what is the connection in half an hour	vehicle=subway, departure_time=6:15pm, from_stop=Wall Street, direction=Rector Street, line=R
+reply	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in twenty minutes	from_stop=Astor Place, direction=Port Authority Bus Terminal, departure_time=9:00am, vehicle=subway, line=L
+apologize	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in fifteen minutes	*=notfound, departure_time_rel=0:15
+request	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in twenty minutes	from_stop=?, to_stop=?
+confirm-request	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in ten minutes	confirm: departure_time_rel=0:10; request: from_stop=?, to_stop=?
+confirm	connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	connection in ten minutes	departure_time_rel=0:10
+reply	depart in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	depart in thirty minutes	from_stop=Columbus Circle, vehicle=bus, line=M106, direction=Prince Street, departure_time=10:12am
+apologize	depart in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	depart in thirty minutes	*=notfound, departure_time_rel=0:30
+request	depart in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	depart in fifteen minutes	from_stop=?, to_stop=?
+confirm-request	depart in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	depart in thirty minutes	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
+confirm	depart in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	depart in thirty minutes	departure_time_rel=0:30
+reply	what is duration	request(duration)	what is duration	duration=57 minutes
+reply	what is the connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what is the connection in half an hour	direction=Port Authority Bus Terminal, departure_time=7:07am, from_stop=Chambers Street, vehicle=bus, line=M4
 apologize	what is the connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what is the connection in half an hour	*=notfound, departure_time_rel=0:30
 request	what is the connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what is the connection in half an hour	from_stop=?, to_stop=?
 confirm-request	what is the connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what is the connection in half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	what is the connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what is the connection in half an hour	departure_time_rel=0:30
-reply	what is the distance of the trip	request(distance)	what is the distance of the trip	distance=1.9 miles
-reply	what is the distance of this trip	request(distance)	what is the distance of this trip	distance=9.1 miles
-reply	what is the distance	request(distance)	what is the distance	distance=8.6 miles
-reply	what is the duration of that	request(duration)	what is the duration of that	duration=23 minutes
-reply	what is the duration of the distance of the trip	request(duration)&request(distance)	what is the duration of the distance of the trip	distance=7.9 miles, duration=74 minutes
-reply	what is the duration of the trip	request(duration)	what is the duration of the trip	duration=38 minutes
-reply	what is the duration of this trip	request(duration)	what is the duration of this trip	duration=47 minutes
-reply	what is the duration	request(duration)	what is the duration	duration=44 minutes
-reply	what is the how long is that trip	request(duration)&request(distance)	what is the how long is that trip	distance=11.3 miles, duration=74 minutes
-reply	what is the next connection from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	what is the next connection from Canal Street	vehicle=bus, from_stop=Canal Street, line=M11, departure_time=10:01pm, direction=Inwood
-apologize	what is the next connection from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	what is the next connection from Fulton Street	*=notfound, from_stop=Fulton Street, alternative=next
-confirm	what is the next connection from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	what is the next connection from Bowling Green	from_stop=Bowling Green, alternative=next
-reply	what is the next connection	"inform(alternative=""next"")"	what is the next connection	line=D, from_stop=Cortlandt Street, departure_time=9:03am, vehicle=subway, direction=Astor Place
+reply	what is the distance of the trip	request(distance)	what is the distance of the trip	distance=8.5 miles
+reply	what is the distance of this trip	request(distance)	what is the distance of this trip	distance=0.5 miles
+reply	what is the distance	request(distance)	what is the distance	distance=1.3 miles
+reply	what is the duration of that	request(duration)	what is the duration of that	duration=76 minutes
+reply	what is the duration of the distance of the trip	request(duration)&request(distance)	what is the duration of the distance of the trip	distance=3.3 miles, duration=56 minutes
+reply	what is the duration of the trip	request(duration)	what is the duration of the trip	duration=18 minutes
+reply	what is the duration of this trip	request(duration)	what is the duration of this trip	duration=13 minutes
+reply	what is the duration	request(duration)	what is the duration	duration=54 minutes
+reply	what is the how long is that trip	request(duration)&request(distance)	what is the how long is that trip	distance=6.7 miles, duration=66 minutes
+reply	what is the next connection from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	what is the next connection from Union Square	departure_time=10:12pm, line=M2, from_stop=Union Square, direction=Bowery, vehicle=bus
+apologize	what is the next connection from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	what is the next connection from City Hall	*=notfound, from_stop=City Hall, alternative=next
+confirm	what is the next connection from *STOP	"inform(from_stop=""*STOP"")&inform(alternative=""next"")"	what is the next connection from Cathedral Parkway	from_stop=Cathedral Parkway, alternative=next
+reply	what is the next connection	"inform(alternative=""next"")"	what is the next connection	from_stop=Broad Street, departure_time=11:00pm, vehicle=bus, direction=Cortlandt Street, line=M34
 apologize	what is the next connection	"inform(alternative=""next"")"	what is the next connection	*=notfound, alternative=next
 confirm	what is the next connection	"inform(alternative=""next"")"	what is the next connection	alternative=next
-reply	what is the number of transfers	request(num_transfers)	what is the number of transfers	num_transfers=2
-reply	where is the next connection	"inform(alternative=""next"")"	where is the next connection	vehicle=bus, line=M31, departure_time=11:00am, direction=City Hall, from_stop=Inwood
+reply	what is the number of transfers	request(num_transfers)	what is the number of transfers	num_transfers=0
+reply	when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when is the next connection	departure_time=2:13pm
+confirm-reply	when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when is the next connection	confirm: alternative=next; reply: departure_time=2:13pm
+confirm	when is the next connection	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when is the next connection	alternative=next
+reply	where is the next connection	"inform(alternative=""next"")"	where is the next connection	departure_time=12:00pm, vehicle=subway, from_stop=Broad Street, direction=Times Square, line=7
 apologize	where is the next connection	"inform(alternative=""next"")"	where is the next connection	*=notfound, alternative=next
 confirm	where is the next connection	"inform(alternative=""next"")"	where is the next connection	alternative=next
-reply	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a subway connection please	line=Q, vehicle=subway, from_stop=Bryant Park, direction=Herald Square, departure_time=11:00am
-apologize	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a subway connection please	*=notfound, vehicle=subway
-request	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a subway connection please	from_stop=?, to_stop=?
-confirm-request	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a subway connection please	confirm: vehicle=subway; request: from_stop=?, to_stop=?
-confirm	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a subway connection please	vehicle=subway
-reply	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Bryant Park to the	vehicle=subway, direction=Essex Street, line=G, departure_time=6:09pm, from_stop=Bryant Park
-apologize	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Prince Street to the	*=notfound, from_stop=Prince Street
-request	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Essex Street to the	to_stop=?
-confirm-request	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Bleecker Street to the	confirm: from_stop=Bleecker Street; request: to_stop=?
-confirm	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Bleecker Street to the	from_stop=Bleecker Street
-reply	i'd like to find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	i'd like to find out connection at one pm	from_stop=Houston Street, direction=Canal Street, line=R, departure_time=1:06pm, vehicle=subway
-apologize	i'd like to find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	i'd like to find out connection at zero pm	*=notfound, departure_time=0:00
-request	i'd like to find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	i'd like to find out connection at nine pm	from_stop=?, to_stop=?
-confirm-request	i'd like to find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	i'd like to find out connection at four pm	confirm: departure_time=4:00; request: from_stop=?, to_stop=?
-confirm	i'd like to find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	i'd like to find out connection at four pm	departure_time=4:00
-reply	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from City Hall to the	direction=Bowery, vehicle=bus, from_stop=City Hall, departure_time=8:14am, line=M8
-apologize	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Washington Square to the	*=notfound, from_stop=Washington Square
-request	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Inwood to the	to_stop=?
-confirm-request	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Port Authority Bus Terminal to the	confirm: from_stop=Port Authority Bus Terminal; request: to_stop=?
-confirm	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Port Authority Bus Terminal to the	from_stop=Port Authority Bus Terminal
-reply	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	bus line	direction=Union Square, departure_time=4:19pm, vehicle=bus, from_stop=Park Place, line=M15
-apologize	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	bus line	*=notfound, vehicle=bus
-request	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	bus line	from_stop=?, to_stop=?
+reply	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a bus connection please	direction=Houston Street, vehicle=bus, departure_time=11:05am, from_stop=Canal Street, line=M86
+apologize	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a bus connection please	*=notfound, vehicle=bus
+request	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a bus connection please	from_stop=?, to_stop=?
+confirm-request	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a bus connection please	confirm: vehicle=bus; request: from_stop=?, to_stop=?
+confirm	id like to find a *VEHICLE connection please	"inform(vehicle=""*VEHICLE"")"	id like to find a bus connection please	vehicle=bus
+reply	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Grand Central to the	from_stop=Grand Central, direction=Washington Square, departure_time=7:17am, line=M79, vehicle=bus
+apologize	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Bowery to the	*=notfound, from_stop=Bowery
+request	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Grand Street to the	to_stop=?
+confirm-request	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Houston Street to the	confirm: from_stop=Houston Street; request: to_stop=?
+confirm	i'd like it from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like it from Houston Street to the	from_stop=Houston Street
+reply	i'd like to find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'd like to find out connection at four pm	vehicle=bus, from_stop=Park Place, direction=Inwood, departure_time=4:04pm, line=M35
+apologize	i'd like to find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'd like to find out connection at ten pm	*=notfound, departure_time=10:00, ampm=pm
+request	i'd like to find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'd like to find out connection at eight pm	from_stop=?, to_stop=?
+confirm-request	i'd like to find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'd like to find out connection at eleven am	confirm: departure_time=11:00, ampm=am; request: from_stop=?, to_stop=?
+confirm	i'd like to find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'd like to find out connection at eleven am	departure_time=11:00, ampm=am
+reply	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Bowling Green to the	departure_time=7:04pm, vehicle=bus, direction=Inwood, from_stop=Bowling Green, line=M101
+apologize	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Essex Street to the	*=notfound, from_stop=Essex Street
+request	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Prince Street to the	to_stop=?
+confirm-request	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Times Square to the	confirm: from_stop=Times Square; request: to_stop=?
+confirm	i'd like to go from *STOP to the	"inform(from_stop=""*STOP"")"	i'd like to go from Times Square to the	from_stop=Times Square
+reply	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	subway line	line=4, vehicle=subway, from_stop=Roosevelt Island, departure_time=2:02pm, direction=Rector Street
+apologize	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	subway line	*=notfound, vehicle=subway
+request	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	subway line	from_stop=?, to_stop=?
 confirm-request	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	bus line	confirm: vehicle=bus; request: from_stop=?, to_stop=?
 confirm	*VEHICLE line	"inform(vehicle=""*VEHICLE"")"	bus line	vehicle=bus
-reply	how long does it take how much	request(duration)	how long does it take how much	duration=79 minutes
-reply	how long does it take	request(duration)	how long does it take	duration=51 minutes
-reply	how long does it take to ride	request(duration)	how long does it take to ride	duration=55 minutes
-reply	how long for travel	request(duration)	how long for travel	duration=58 minutes
-reply	how long is it going to take	request(duration)	how long is it going to take	duration=72 minutes
-reply	how long is it how many transfers and what is the distance of	request(num_transfers)&request(distance)	how long is it how many transfers and what is the distance of	distance=7.0 miles, num_transfers=0
-reply	how long is it	request(distance)	how long is it	distance=9.9 miles
-reply	how long is that trip	request(duration)&request(distance)	how long is that trip	distance=9.9 miles, duration=69 minutes
-reply	how long is the duration of this trip	request(duration)	how long is the duration of this trip	duration=59 minutes
-reply	how long is the duration	request(duration)	how long is the duration	duration=71 minutes
-reply	how long is the ride	request(distance)	how long is the ride	distance=7.1 miles
-reply	how long is the trip	request(duration)&request(distance)	how long is the trip	distance=1.2 miles, duration=68 minutes
-reply	how long will i be traveling	request(distance)	how long will i be traveling	distance=6.5 miles
-reply	how long will it take	request(duration)	how long will it take	duration=14 minutes
-reply	how long will it take to go from *STOP to *STOP by *VEHICLE	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")&request(duration)"	how long will it take to go from Rector Street to Bryant Park by bus	duration=19 minutes
-confirm-reply	how long will it take to go from *STOP to *STOP by *VEHICLE	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")&request(duration)"	how long will it take to go from City Hall to Central Park by subway	confirm: from_stop=City Hall, to_stop=Central Park, vehicle=subway; reply: duration=19 minutes
-confirm	how long will it take to go from *STOP to *STOP by *VEHICLE	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")&request(duration)"	how long will it take to go from City Hall to Central Park by subway	from_stop=City Hall, to_stop=Central Park, vehicle=subway
-reply	how long will that take	request(duration)	how long will that take	duration=62 minutes
-reply	how long will the trip take	request(duration)	how long will the trip take	duration=71 minutes
-reply	how long would it take	request(duration)	how long would it take	duration=68 minutes
-reply	how many transfers and distance of this trip	request(num_transfers)&request(distance)	how many transfers and distance of this trip	distance=7.9 miles, num_transfers=1
-reply	how many transfers and the distance of this trip	request(num_transfers)&request(distance)	how many transfers and the distance of this trip	distance=9.2 miles, num_transfers=2
-reply	how many transfers and what is the distance of the trip	request(num_transfers)&request(distance)	how many transfers and what is the distance of the trip	distance=4.1 miles, num_transfers=0
-reply	how many transfers are there	request(num_transfers)	how many transfers are there	num_transfers=1
-reply	how many transfers	request(num_transfers)	how many transfers	num_transfers=1
+reply	how long does it take how much	request(duration)	how long does it take how much	duration=19 minutes
+reply	how long does it take	request(duration)	how long does it take	duration=19 minutes
+reply	how long does it take to ride	request(duration)	how long does it take to ride	duration=62 minutes
+reply	how long for travel	request(duration)	how long for travel	duration=71 minutes
+reply	how long is it going to take	request(duration)	how long is it going to take	duration=68 minutes
+reply	how long is it how many transfers and what is the distance of	request(num_transfers)&request(distance)	how long is it how many transfers and what is the distance of	distance=6.1 miles, num_transfers=1
+reply	how long is it	request(distance)	how long is it	distance=4.6 miles
+reply	how long is that trip	request(duration)&request(distance)	how long is that trip	distance=5.8 miles, duration=71 minutes
+reply	how long is the duration of this trip	request(duration)	how long is the duration of this trip	duration=45 minutes
+reply	how long is the duration	request(duration)	how long is the duration	duration=40 minutes
+reply	how long is the ride	request(distance)	how long is the ride	distance=10.4 miles
+reply	how long is the trip	request(duration)&request(distance)	how long is the trip	distance=2.9 miles, duration=23 minutes
+reply	how long will i be traveling	request(distance)	how long will i be traveling	distance=4.7 miles
+reply	how long will it take	request(duration)	how long will it take	duration=53 minutes
+reply	how long will it take to go from *STOP to *STOP by *VEHICLE	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")&request(duration)"	how long will it take to go from Central Park to Washington Square by bus	duration=12 minutes
+confirm-reply	how long will it take to go from *STOP to *STOP by *VEHICLE	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")&request(duration)"	how long will it take to go from Marble Hill to Bowling Green by bus	confirm: from_stop=Marble Hill, to_stop=Bowling Green, vehicle=bus; reply: duration=12 minutes
+confirm	how long will it take to go from *STOP to *STOP by *VEHICLE	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")&request(duration)"	how long will it take to go from Marble Hill to Bowling Green by bus	from_stop=Marble Hill, to_stop=Bowling Green, vehicle=bus
+reply	how long will that take	request(duration)	how long will that take	duration=65 minutes
+reply	how long will the trip take	request(duration)	how long will the trip take	duration=10 minutes
+reply	how long would it take	request(duration)	how long would it take	duration=61 minutes
+reply	i'm looking for a *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'm looking for a five pm connection	departure_time=5:05pm, direction=Park Place, from_stop=Wall Street, vehicle=bus, line=M4
+apologize	i'm looking for a *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'm looking for a one pm connection	*=notfound, departure_time=1:00, ampm=pm
+request	i'm looking for a *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'm looking for a eleven am connection	from_stop=?, to_stop=?
+confirm-request	i'm looking for a *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'm looking for a ten am connection	confirm: departure_time=10:00, ampm=am; request: from_stop=?, to_stop=?
+confirm	i'm looking for a *NUMBER *AMPM connection	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	i'm looking for a ten am connection	departure_time=10:00, ampm=am
+reply	how many transfers and distance of this trip	request(num_transfers)&request(distance)	how many transfers and distance of this trip	distance=8.7 miles, num_transfers=0
+reply	how many transfers and the distance of this trip	request(num_transfers)&request(distance)	how many transfers and the distance of this trip	distance=3.0 miles, num_transfers=1
+reply	how many transfers and what is the distance of the trip	request(num_transfers)&request(distance)	how many transfers and what is the distance of the trip	distance=11.2 miles, num_transfers=2
+reply	how many transfers are there	request(num_transfers)	how many transfers are there	num_transfers=2
+reply	how many transfers	request(num_transfers)	how many transfers	num_transfers=2
 reply	how many transfers will there be	request(num_transfers)	how many transfers will there be	num_transfers=0
-reply	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Broad Street to Rector Street	from_stop=Broad Street, line=B, vehicle=subway, direction=Rector Street, departure_time=7:12am
-apologize	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Bleecker Street to Bowling Green	*=notfound, from_stop=Bleecker Street, to_stop=Bowling Green
-confirm	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Central Park to Washington Square	from_stop=Central Park, to_stop=Washington Square
-reply	give me the number of transfers	request(num_transfers)	give me the number of transfers	num_transfers=0
-reply	*NUMBER minutes	"inform(time=""*TIME"")"	seven minutes	line=F, from_stop=Rockefeller Center, departure_time=7:12pm, direction=Lincoln Center, vehicle=subway
-reply	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in one minutes	departure_time=8:00am, vehicle=subway, from_stop=Franklin Street, direction=Wall Street, line=N
-apologize	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in three minutes	*=notfound, departure_time_rel=3:00
-request	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in two minutes	from_stop=?, to_stop=?
-confirm-request	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in zero minutes	confirm: departure_time_rel=0:00; request: from_stop=?, to_stop=?
-confirm	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in zero minutes	departure_time_rel=0:00
-reply	i need a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need a bus connection from Columbia University to Grand Central	departure_time=11:16am, direction=Grand Central, vehicle=bus, from_stop=Columbia University, line=M7
-apologize	i need a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need a subway connection from Wall Street to Washington Square	*=notfound, from_stop=Wall Street, to_stop=Washington Square, vehicle=subway
-confirm	i need a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need a bus connection from Central Park to Columbia University	from_stop=Central Park, to_stop=Columbia University, vehicle=bus
-reply	i need a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need a bus connection	from_stop=Essex Street, direction=Marble Hill, vehicle=bus, departure_time=7:04am, line=M9
+reply	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from East Broadway to Inwood	from_stop=East Broadway, line=M9, direction=Inwood, vehicle=bus, departure_time=8:18am
+apologize	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Cathedral Parkway to Wall Street	*=notfound, from_stop=Cathedral Parkway, to_stop=Wall Street
+confirm	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Times Square to Marble Hill	from_stop=Times Square, to_stop=Marble Hill
+reply	give me the number of transfers	request(num_transfers)	give me the number of transfers	num_transfers=2
+reply	*NUMBER minutes	"inform(departure_time=""*TIME"")"	thirty minutes	line=M102, departure_time=0:30am, from_stop=Central Park, vehicle=bus, direction=Astor Place
+apologize	*NUMBER minutes	"inform(departure_time=""*TIME"")"	ten minutes	*=notfound, departure_time=0:10
+request	*NUMBER minutes	"inform(departure_time=""*TIME"")"	twenty minutes	from_stop=?, to_stop=?
+confirm-request	*NUMBER minutes	"inform(departure_time=""*TIME"")"	fifteen minutes	confirm: departure_time=0:15; request: from_stop=?, to_stop=?
+confirm	*NUMBER minutes	"inform(departure_time=""*TIME"")"	fifteen minutes	departure_time=0:15
+reply	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in fifteen minutes	vehicle=bus, line=M11, direction=Grand Street, from_stop=Inwood, departure_time=7:01am
+apologize	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in thirty minutes	*=notfound, departure_time_rel=0:30
+request	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in fifteen minutes	from_stop=?, to_stop=?
+confirm-request	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in twenty minutes	confirm: departure_time_rel=0:20; request: from_stop=?, to_stop=?
+confirm	i need a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need a connection in twenty minutes	departure_time_rel=0:20
+reply	i need a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need a bus connection from Delancey Street to Rector Street	from_stop=Delancey Street, line=M42, departure_time=9:03am, direction=Rector Street, vehicle=bus
+apologize	i need a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need a subway connection from Bleecker Street to City Hall	*=notfound, from_stop=Bleecker Street, to_stop=City Hall, vehicle=subway
+confirm	i need a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need a subway connection from Port Authority Bus Terminal to Times Square	from_stop=Port Authority Bus Terminal, to_stop=Times Square, vehicle=subway
+reply	i need a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need a subway connection	direction=Central Park, vehicle=subway, line=Z, from_stop=Roosevelt Island, departure_time=11:16am
 apologize	i need a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need a bus connection	*=notfound, vehicle=bus
 request	i need a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need a subway connection	from_stop=?, to_stop=?
 confirm-request	i need a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need a bus connection	confirm: vehicle=bus; request: from_stop=?, to_stop=?
 confirm	i need a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need a bus connection	vehicle=bus
-reply	i need the distance of the trip	request(distance)	i need the distance of the trip	distance=8.2 miles
-reply	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Astor Place queen	line=A, departure_time=1:09pm, vehicle=subway, from_stop=Astor Place, direction=Washington Square
-apologize	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Park Place queen	*=notfound, from_stop=Park Place
-request	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Herald Square queen	to_stop=?
-confirm-request	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Dyckman Street queen	confirm: from_stop=Dyckman Street; request: to_stop=?
-confirm	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Dyckman Street queen	from_stop=Dyckman Street
-reply	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a bus connection	vehicle=bus, departure_time=7:06am, direction=Dyckman Street, line=M5, from_stop=City Hall
-apologize	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a subway connection	*=notfound, vehicle=subway
+reply	i need the distance of the trip	request(distance)	i need the distance of the trip	distance=11.4 miles
+reply	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Lincoln Center queen	vehicle=subway, direction=Bryant Park, departure_time=9:11pm, from_stop=Lincoln Center, line=J
+apologize	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Chambers Street queen	*=notfound, from_stop=Chambers Street
+request	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Rockefeller Center queen	to_stop=?
+confirm-request	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Bowling Green queen	confirm: from_stop=Bowling Green; request: to_stop=?
+confirm	i need to find a connection from *STOP queen	"inform(from_stop=""*STREET"")"	i need to find a connection from Bowling Green queen	from_stop=Bowling Green
+reply	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a subway connection	vehicle=subway, from_stop=Chambers Street, direction=Rockefeller Center, line=E, departure_time=7:08am
+apologize	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a bus connection	*=notfound, vehicle=bus
 request	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a subway connection	from_stop=?, to_stop=?
-confirm-request	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a bus connection	confirm: vehicle=bus; request: from_stop=?, to_stop=?
-confirm	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a bus connection	vehicle=bus
-reply	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a bus connection	direction=Prince Street, from_stop=Grand Central, line=M101, departure_time=6:06pm, vehicle=bus
-apologize	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a subway connection	*=notfound, vehicle=subway
+confirm-request	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a subway connection	confirm: vehicle=subway; request: from_stop=?, to_stop=?
+confirm	i need to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find a subway connection	vehicle=subway
+reply	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a bus connection	from_stop=Astor Place, direction=Rockefeller Center, vehicle=bus, line=M34, departure_time=7:01am
+apologize	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a bus connection	*=notfound, vehicle=bus
 request	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a subway connection	from_stop=?, to_stop=?
 confirm-request	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a subway connection	confirm: vehicle=subway; request: from_stop=?, to_stop=?
 confirm	i need to find out about a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	i need to find out about a subway connection	vehicle=subway
-reply	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in zero minutes	line=N, departure_time=10:12am, vehicle=subway, direction=Bleecker Street, from_stop=Washington Square
-apologize	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in zero minutes	*=notfound, departure_time_rel=0:00
-request	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in zero minutes	from_stop=?, to_stop=?
-confirm-request	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in four minutes	confirm: departure_time_rel=4:00; request: from_stop=?, to_stop=?
-confirm	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in four minutes	departure_time_rel=4:00
-reply	i need to find the *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need to find the subway connection from World Trade Center to Canal Street	vehicle=subway, direction=Canal Street, departure_time=11:12am, line=J, from_stop=World Trade Center
-apologize	i need to find the *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need to find the bus connection from Grand Central to Dyckman Street	*=notfound, from_stop=Grand Central, to_stop=Dyckman Street, vehicle=bus
-confirm	i need to find the *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need to find the subway connection from Fulton Street to Cortlandt Street	from_stop=Fulton Street, to_stop=Cortlandt Street, vehicle=subway
-reply	i need to go from *STOP to *STOP and *NUMBER second	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i need to go from Prince Street to East Broadway and *NUMBER second	line=M, departure_time=9:02am, direction=East Broadway, vehicle=subway, from_stop=Prince Street
-apologize	i need to go from *STOP to *STOP and *NUMBER second	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i need to go from Roosevelt Island to Park Place and *NUMBER second	*=notfound, from_stop=Roosevelt Island, to_stop=Park Place
-confirm	i need to go from *STOP to *STOP and *NUMBER second	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i need to go from Grand Street to World Trade Center and *NUMBER second	from_stop=Grand Street, to_stop=World Trade Center
-reply	i need to know the duration of the trip and find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")&request(duration)"	i need to know the duration of the trip and find out connection at seven pm	duration=46 minutes
-confirm-reply	i need to know the duration of the trip and find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")&request(duration)"	i need to know the duration of the trip and find out connection at eleven pm	confirm: departure_time=11:00; reply: duration=46 minutes
-confirm	i need to know the duration of the trip and find out connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")&request(duration)"	i need to know the duration of the trip and find out connection at eleven pm	departure_time=11:00
-reply	i need to know the duration of the trip	request(duration)	i need to know the duration of the trip	duration=42 minutes
-reply	duration number of transfers and distance	request(num_transfers)&request(distance)	duration number of transfers and distance	distance=4.3 miles, num_transfers=0
-reply	at *NUMBER *NUMBER	"inform(time=""*TIME"")"	at nine nine	line=1, vehicle=subway, from_stop=Rockefeller Center, direction=Dyckman Street, departure_time=9:17am
-reply	at *NUMBER pm	"inform(time=""*TIME"")"	at ten pm	vehicle=subway, from_stop=Penn Station, line=Q, direction=Park Place, departure_time=10:15pm
-reply	in *NUMBER an hour	"inform(time_rel=""*TIME_REL"")"	in half an hour	departure_time=1:14pm, direction=World Trade Center, line=1, from_stop=Washington Square, vehicle=subway
-reply	in *NUMBER minutes	"inform(time_rel=""*TIME_REL"")"	in four minutes	from_stop=Fulton Street, direction=Bowery, departure_time=11:08am, line=5, vehicle=subway
-reply	*NUMBER o'clock	"inform(time=""*TIME"")"	seven o'clock	from_stop=Fulton Street, direction=Park Place, line=M20, departure_time=7:02pm, vehicle=bus
-reply	distance of the trip	request(distance)	distance of the trip	distance=3.6 miles
+reply	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in twenty minutes	departure_time=5:13pm, line=4, vehicle=subway, from_stop=Washington Square, direction=Fulton Street
+apologize	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in ten minutes	*=notfound, departure_time_rel=0:10
+request	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in fifteen minutes	from_stop=?, to_stop=?
+confirm-request	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in twenty minutes	confirm: departure_time_rel=0:20; request: from_stop=?, to_stop=?
+confirm	i need to find out the connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	i need to find out the connection in twenty minutes	departure_time_rel=0:20
+reply	i need to find the *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need to find the bus connection from Cortlandt Street to Inwood	vehicle=bus, from_stop=Cortlandt Street, line=M72, direction=Inwood, departure_time=9:15pm
+apologize	i need to find the *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need to find the bus connection from Franklin Street to Columbia University	*=notfound, from_stop=Franklin Street, to_stop=Columbia University, vehicle=bus
+confirm	i need to find the *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i need to find the subway connection from Cathedral Parkway to Dyckman Street	from_stop=Cathedral Parkway, to_stop=Dyckman Street, vehicle=subway
+reply	i need to go from *STOP to *STOP and *NUMBER second	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i need to go from Cortlandt Street to East Broadway and *NUMBER second	vehicle=subway, departure_time=6:01pm, line=L, direction=East Broadway, from_stop=Cortlandt Street
+apologize	i need to go from *STOP to *STOP and *NUMBER second	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i need to go from Prince Street to Fulton Street and *NUMBER second	*=notfound, from_stop=Prince Street, to_stop=Fulton Street
+confirm	i need to go from *STOP to *STOP and *NUMBER second	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i need to go from Fulton Street to Rector Street and *NUMBER second	from_stop=Fulton Street, to_stop=Rector Street
+reply	i need to know the duration of the trip and find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")&request(duration)"	i need to know the duration of the trip and find out connection at twelve pm	duration=10 minutes
+confirm-reply	i need to know the duration of the trip and find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")&request(duration)"	i need to know the duration of the trip and find out connection at ten pm	confirm: departure_time=10:00, ampm=pm; reply: duration=10 minutes
+confirm	i need to know the duration of the trip and find out connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")&request(duration)"	i need to know the duration of the trip and find out connection at ten pm	departure_time=10:00, ampm=pm
+reply	i need to know the duration of the trip	request(duration)	i need to know the duration of the trip	duration=68 minutes
+reply	duration number of transfers and distance	request(num_transfers)&request(distance)	duration number of transfers and distance	distance=4.4 miles, num_transfers=1
+reply	at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	at three pm	departure_time=3:17pm, from_stop=Union Square, line=M101, vehicle=bus, direction=Bowery
+apologize	at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	at twelve pm	*=notfound, departure_time=12:00, ampm=pm
+request	at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	at nine am	from_stop=?, to_stop=?
+confirm-request	at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	at six pm	confirm: departure_time=6:00, ampm=pm; request: from_stop=?, to_stop=?
+confirm	at *NUMBER *AMPM	"inform(departure_time=""*TIME"")&inform(ampm=""*AMPM"")"	at six pm	departure_time=6:00, ampm=pm
+reply	at *NUMBER *NUMBER	"inform(departure_time=""*TIME"")"	at nine thirty	line=M7, from_stop=City Hall, departure_time=9:30am, direction=Penn Station, vehicle=bus
+apologize	at *NUMBER *NUMBER	"inform(departure_time=""*TIME"")"	at twelve thirty	*=notfound, departure_time=12:30
+request	at *NUMBER *NUMBER	"inform(departure_time=""*TIME"")"	at eleven thirty	from_stop=?, to_stop=?
+confirm-request	at *NUMBER *NUMBER	"inform(departure_time=""*TIME"")"	at nine thirty	confirm: departure_time=9:30; request: from_stop=?, to_stop=?
+confirm	at *NUMBER *NUMBER	"inform(departure_time=""*TIME"")"	at nine thirty	departure_time=9:30
+reply	in *NUMBER an hour	"inform(departure_time_rel=""*TIME_REL"")"	in half an hour	vehicle=subway, from_stop=Bryant Park, direction=Broad Street, line=1, departure_time=10:07am
+apologize	in *NUMBER an hour	"inform(departure_time_rel=""*TIME_REL"")"	in half an hour	*=notfound, departure_time_rel=0:30
+request	in *NUMBER an hour	"inform(departure_time_rel=""*TIME_REL"")"	in half an hour	from_stop=?, to_stop=?
+confirm-request	in *NUMBER an hour	"inform(departure_time_rel=""*TIME_REL"")"	in half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
+confirm	in *NUMBER an hour	"inform(departure_time_rel=""*TIME_REL"")"	in half an hour	departure_time_rel=0:30
+reply	in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	in ten minutes	vehicle=bus, line=M5, direction=Grand Street, departure_time=11:05am, from_stop=Rockefeller Center
+apologize	in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	in fifteen minutes	*=notfound, departure_time_rel=0:15
+request	in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	in thirty minutes	from_stop=?, to_stop=?
+confirm-request	in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	in ten minutes	confirm: departure_time_rel=0:10; request: from_stop=?, to_stop=?
+confirm	in *NUMBER minutes	"inform(departure_time_rel=""*TIME_REL"")"	in ten minutes	departure_time_rel=0:10
+reply	*NUMBER o'clock	"inform(departure_time=""*TIME"")"	four o'clock	vehicle=subway, direction=Grand Street, line=6, departure_time=4:01am, from_stop=Franklin Street
+apologize	*NUMBER o'clock	"inform(departure_time=""*TIME"")"	eight o'clock	*=notfound, departure_time=8:00
+request	*NUMBER o'clock	"inform(departure_time=""*TIME"")"	twelve o'clock	from_stop=?, to_stop=?
+confirm-request	*NUMBER o'clock	"inform(departure_time=""*TIME"")"	eight o'clock	confirm: departure_time=8:00; request: from_stop=?, to_stop=?
+confirm	*NUMBER o'clock	"inform(departure_time=""*TIME"")"	eight o'clock	departure_time=8:00
+reply	distance of the trip	request(distance)	distance of the trip	distance=9.9 miles
 reply	distance of trip	request(distance)	distance of trip	distance=4.6 miles
-reply	number of transfers and distance of the trip	request(num_transfers)&request(distance)	number of transfers and distance of the trip	distance=9.1 miles, num_transfers=2
+reply	number of transfers and distance of the trip	request(num_transfers)&request(distance)	number of transfers and distance of the trip	distance=4.2 miles, num_transfers=1
 reply	number of transfers	request(num_transfers)	number of transfers	num_transfers=2
-reply	distance	request(distance)	distance	distance=11.6 miles
-reply	time requirement for a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")&request(duration)"	time requirement for a bus connection	duration=75 minutes
-confirm-reply	time requirement for a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")&request(duration)"	time requirement for a subway connection	confirm: vehicle=subway; reply: duration=75 minutes
-confirm	time requirement for a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")&request(duration)"	time requirement for a subway connection	vehicle=subway
-reply	time requirement	request(duration)	time requirement	duration=66 minutes
-reply	time requirements and next connection	"request(duration)&inform(alternative=""next"")"	time requirements and next connection	duration=37 minutes
-confirm-reply	time requirements and next connection	"request(duration)&inform(alternative=""next"")"	time requirements and next connection	confirm: alternative=next; reply: duration=37 minutes
+reply	distance	request(distance)	distance	distance=3.0 miles
+reply	time requirement for a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")&request(duration)"	time requirement for a subway connection	duration=35 minutes
+confirm-reply	time requirement for a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")&request(duration)"	time requirement for a bus connection	confirm: vehicle=bus; reply: duration=35 minutes
+confirm	time requirement for a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")&request(duration)"	time requirement for a bus connection	vehicle=bus
+reply	time requirement	request(duration)	time requirement	duration=73 minutes
+reply	time requirements and next connection	"request(duration)&inform(alternative=""next"")"	time requirements and next connection	duration=69 minutes
+confirm-reply	time requirements and next connection	"request(duration)&inform(alternative=""next"")"	time requirements and next connection	confirm: alternative=next; reply: duration=69 minutes
 confirm	time requirements and next connection	"request(duration)&inform(alternative=""next"")"	time requirements and next connection	alternative=next
-reply	time requirements	request(duration)	time requirements	duration=64 minutes
-reply	the second option	"inform(alternative=""2"")"	the second option	departure_time=11:17pm, from_stop=Union Square, line=M50, vehicle=bus, direction=Bowery
+reply	time requirements	request(duration)	time requirements	duration=46 minutes
+reply	the second option	"inform(alternative=""2"")"	the second option	line=F, vehicle=subway, direction=Houston Street, departure_time=7:10pm, from_stop=Roosevelt Island
 apologize	the second option	"inform(alternative=""2"")"	the second option	*=notfound, alternative=2
 confirm	the second option	"inform(alternative=""2"")"	the second option	alternative=2
-reply	from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	from Park Place to Houston Street	departure_time=10:15pm, from_stop=Park Place, vehicle=bus, line=M96, direction=Houston Street
-apologize	from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	from Rector Street to Canal Street	*=notfound, from_stop=Rector Street, to_stop=Canal Street
-confirm	from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	from Houston Street to Columbus Circle	from_stop=Houston Street, to_stop=Columbus Circle
-reply	from *STOP	"inform(from_stop=""*STREET"")"	from Dyckman Street	direction=Wall Street, departure_time=2:02pm, vehicle=subway, line=N, from_stop=Dyckman Street
-apologize	from *STOP	"inform(from_stop=""*STREET"")"	from Bleecker Street	*=notfound, from_stop=Bleecker Street
-request	from *STOP	"inform(from_stop=""*STREET"")"	from Houston Street	to_stop=?
-confirm-request	from *STOP	"inform(from_stop=""*STREET"")"	from Bowling Green	confirm: from_stop=Bowling Green; request: to_stop=?
-confirm	from *STOP	"inform(from_stop=""*STREET"")"	from Bowling Green	from_stop=Bowling Green
-reply	to *STOP and	"inform(to_stop=""*STREET"")"	to Columbus Circle and	vehicle=subway, departure_time=8:10am, line=A, from_stop=Franklin Street, direction=Columbus Circle
-apologize	to *STOP and	"inform(to_stop=""*STREET"")"	to Columbia University and	*=notfound, to_stop=Columbia University
-request	to *STOP and	"inform(to_stop=""*STREET"")"	to Wall Street and	from_stop=?
-confirm-request	to *STOP and	"inform(to_stop=""*STREET"")"	to Bowery and	confirm: to_stop=Bowery; request: from_stop=?
-confirm	to *STOP and	"inform(to_stop=""*STREET"")"	to Bowery and	to_stop=Bowery
-reply	to *STOP	"inform(to_stop=""*STREET"")"	to Grand Central	line=M79, direction=Grand Central, departure_time=11:18am, from_stop=Port Authority Bus Terminal, vehicle=bus
-apologize	to *STOP	"inform(to_stop=""*STREET"")"	to Rockefeller Center	*=notfound, to_stop=Rockefeller Center
-request	to *STOP	"inform(to_stop=""*STREET"")"	to Canal Street	from_stop=?
-confirm-request	to *STOP	"inform(to_stop=""*STREET"")"	to East Broadway	confirm: to_stop=East Broadway; request: from_stop=?
-confirm	to *STOP	"inform(to_stop=""*STREET"")"	to East Broadway	to_stop=East Broadway
-reply	to *STOP	"inform(to_stop=""*STREET"")"	to Cortlandt Street	direction=Cortlandt Street, departure_time=12:12pm, line=D, vehicle=subway, from_stop=Astor Place
-apologize	to *STOP	"inform(to_stop=""*STREET"")"	to Bowling Green	*=notfound, to_stop=Bowling Green
-request	to *STOP	"inform(to_stop=""*STREET"")"	to Grand Street	from_stop=?
-confirm-request	to *STOP	"inform(to_stop=""*STREET"")"	to World Trade Center	confirm: to_stop=World Trade Center; request: from_stop=?
-confirm	to *STOP	"inform(to_stop=""*STREET"")"	to World Trade Center	to_stop=World Trade Center
-reply	and the distance of the trip	request(distance)	and the distance of the trip	distance=0.5 miles
-reply	what's the connect connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what's the connect connection in half an hour	departure_time=10:14am, vehicle=bus, from_stop=Grand Street, line=M14, direction=Grand Central
+reply	from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	from Park Place to Bowling Green	vehicle=subway, departure_time=9:14am, from_stop=Park Place, line=D, direction=Bowling Green
+apologize	from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	from Franklin Street to Marble Hill	*=notfound, from_stop=Franklin Street, to_stop=Marble Hill
+confirm	from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	from Grand Central to Park Place	from_stop=Grand Central, to_stop=Park Place
+reply	from *STOP	"inform(from_stop=""*STREET"")"	from Houston Street	departure_time=2:07pm, from_stop=Houston Street, vehicle=bus, line=M100, direction=Herald Square
+apologize	from *STOP	"inform(from_stop=""*STREET"")"	from World Trade Center	*=notfound, from_stop=World Trade Center
+request	from *STOP	"inform(from_stop=""*STREET"")"	from Roosevelt Island	to_stop=?
+confirm-request	from *STOP	"inform(from_stop=""*STREET"")"	from Franklin Street	confirm: from_stop=Franklin Street; request: to_stop=?
+confirm	from *STOP	"inform(from_stop=""*STREET"")"	from Franklin Street	from_stop=Franklin Street
+reply	to *STOP and	"inform(to_stop=""*STREET"")"	to Cathedral Parkway and	direction=Cathedral Parkway, from_stop=City Hall, vehicle=bus, departure_time=11:17am, line=M31
+apologize	to *STOP and	"inform(to_stop=""*STREET"")"	to Fulton Street and	*=notfound, to_stop=Fulton Street
+request	to *STOP and	"inform(to_stop=""*STREET"")"	to Bowling Green and	from_stop=?
+confirm-request	to *STOP and	"inform(to_stop=""*STREET"")"	to Houston Street and	confirm: to_stop=Houston Street; request: from_stop=?
+confirm	to *STOP and	"inform(to_stop=""*STREET"")"	to Houston Street and	to_stop=Houston Street
+reply	to *STOP	"inform(to_stop=""*STREET"")"	to Times Square	vehicle=bus, line=M66, from_stop=City Hall, direction=Times Square, departure_time=8:10am
+apologize	to *STOP	"inform(to_stop=""*STREET"")"	to Astor Place	*=notfound, to_stop=Astor Place
+request	to *STOP	"inform(to_stop=""*STREET"")"	to Columbus Circle	from_stop=?
+confirm-request	to *STOP	"inform(to_stop=""*STREET"")"	to Astor Place	confirm: to_stop=Astor Place; request: from_stop=?
+confirm	to *STOP	"inform(to_stop=""*STREET"")"	to Astor Place	to_stop=Astor Place
+reply	and the distance of the trip	request(distance)	and the distance of the trip	distance=5.6 miles
+reply	what's the connect connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what's the connect connection in half an hour	direction=Central Park, vehicle=subway, line=G, departure_time=6:00pm, from_stop=Grand Central
 apologize	what's the connect connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what's the connect connection in half an hour	*=notfound, departure_time_rel=0:30
 request	what's the connect connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what's the connect connection in half an hour	from_stop=?, to_stop=?
 confirm-request	what's the connect connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what's the connect connection in half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	what's the connect connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	what's the connect connection in half an hour	departure_time_rel=0:30
-reply	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at three	line=M72, direction=Marble Hill, vehicle=bus, from_stop=Columbus Circle, departure_time=3:18am
-apologize	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at three	*=notfound, departure_time=3:00
-request	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at seven	from_stop=?, to_stop=?
-confirm-request	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at eight	confirm: departure_time=8:00; request: from_stop=?, to_stop=?
-confirm	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at eight	departure_time=8:00
-reply	what's the distance of the trip	request(distance)	what's the distance of the trip	distance=6.7 miles
-reply	what's the duration of the trip	request(duration)	what's the duration of the trip	duration=25 minutes
-reply	are there any connections	"inform(alternative=""dontcare"")"	are there any connections	departure_time=1:00pm, vehicle=subway, line=5, direction=Fulton Street, from_stop=Broad Street
+reply	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at ten	direction=Bryant Park, line=D, departure_time=10:10pm, vehicle=subway, from_stop=Penn Station
+apologize	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at eight	*=notfound, departure_time=8:00
+request	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at five	from_stop=?, to_stop=?
+confirm-request	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at six	confirm: departure_time=6:00; request: from_stop=?, to_stop=?
+confirm	what's the connection at *NUMBER	"inform(departure_time=""*DEPARTURE_TIME"")"	what's the connection at six	departure_time=6:00
+reply	what's the distance of the trip	request(distance)	what's the distance of the trip	distance=8.7 miles
+reply	what's the duration of the trip	request(duration)	what's the duration of the trip	duration=56 minutes
+reply	are there any connections	"inform(alternative=""dontcare"")"	are there any connections	vehicle=bus, line=M7, departure_time=1:07pm, from_stop=Columbus Circle, direction=Lincoln Center
 apologize	are there any connections	"inform(alternative=""dontcare"")"	are there any connections	*=notfound, alternative=dontcare
 confirm	are there any connections	"inform(alternative=""dontcare"")"	are there any connections	alternative=dontcare
-reply	are there any transfers	request(num_transfers)	are there any transfers	num_transfers=2
-reply	is there a connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	is there a connection at nine pm	departure_time=9:01pm, direction=Canal Street, line=Q, from_stop=Port Authority Bus Terminal, vehicle=subway
-apologize	is there a connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	is there a connection at three pm	*=notfound, departure_time=3:00
-request	is there a connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	is there a connection at nine pm	from_stop=?, to_stop=?
-confirm-request	is there a connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	is there a connection at eleven pm	confirm: departure_time=11:00; request: from_stop=?, to_stop=?
-confirm	is there a connection at *NUMBER pm	"inform(departure_time=""*DEPARTURE_TIME"")"	is there a connection at eleven pm	departure_time=11:00
-reply	is there a connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in half an hour	direction=City Hall, departure_time=3:11pm, from_stop=Cathedral Parkway, line=J, vehicle=subway
+reply	are there any transfers	request(num_transfers)	are there any transfers	num_transfers=0
+reply	is there a connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	is there a connection at five pm	vehicle=subway, from_stop=Essex Street, departure_time=5:12pm, line=A, direction=Delancey Street
+apologize	is there a connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	is there a connection at six pm	*=notfound, departure_time=6:00, ampm=pm
+request	is there a connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	is there a connection at eleven am	from_stop=?, to_stop=?
+confirm-request	is there a connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	is there a connection at one pm	confirm: departure_time=1:00, ampm=pm; request: from_stop=?, to_stop=?
+confirm	is there a connection at *NUMBER *AMPM	"inform(departure_time=""*DEPARTURE_TIME"")&inform(ampm=""*AMPM"")"	is there a connection at one pm	departure_time=1:00, ampm=pm
+reply	is there a connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in half an hour	vehicle=subway, from_stop=Broad Street, direction=Bleecker Street, departure_time=11:06pm, line=A
 apologize	is there a connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in half an hour	*=notfound, departure_time_rel=0:30
 request	is there a connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in half an hour	from_stop=?, to_stop=?
 confirm-request	is there a connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	is there a connection in *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in half an hour	departure_time_rel=0:30
-reply	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in four minutes	departure_time=10:10am, vehicle=subway, line=M, direction=East Broadway, from_stop=World Trade Center
-apologize	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in four minutes	*=notfound, departure_time_rel=4:00
-request	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in zero minutes	from_stop=?, to_stop=?
-confirm-request	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in four minutes	confirm: departure_time_rel=4:00; request: from_stop=?, to_stop=?
-confirm	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in four minutes	departure_time_rel=4:00
-reply	is there time requirement	request(duration)	is there time requirement	duration=60 minutes
-reply	travel time	request(duration)	travel time	duration=26 minutes
-reply	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Lincoln Center	vehicle=subway, direction=Lincoln Center, from_stop=Inwood, departure_time=2:03pm, line=F
-apologize	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Prince Street	*=notfound, to_stop=Prince Street
-request	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Herald Square	from_stop=?
-confirm-request	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Franklin Street	confirm: to_stop=Franklin Street; request: from_stop=?
-confirm	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Franklin Street	to_stop=Franklin Street
-reply	*STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	Columbus Circle to Times Square	from_stop=Columbus Circle, vehicle=bus, direction=Times Square, line=M116, departure_time=9:13pm
-apologize	*STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	Houston Street to Bryant Park	*=notfound, from_stop=Houston Street, to_stop=Bryant Park
-confirm	*STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	Astor Place to Columbia University	from_stop=Astor Place, to_stop=Columbia University
-reply	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Inwood to *NUMBER street	departure_time=7:05am, direction=Delancey Street, line=M7, from_stop=Inwood, vehicle=bus
-apologize	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Columbia University to *NUMBER street	*=notfound, from_stop=Columbia University
-request	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Lincoln Center to *NUMBER street	to_stop=?
-confirm-request	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Inwood to *NUMBER street	confirm: from_stop=Inwood; request: to_stop=?
-confirm	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Inwood to *NUMBER street	from_stop=Inwood
-reply	*STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	Bleecker Street to Columbus Circle	direction=Columbus Circle, vehicle=subway, from_stop=Bleecker Street, departure_time=10:04am, line=M
-apologize	*STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	Cortlandt Street to Park Place	*=notfound, from_stop=Cortlandt Street, to_stop=Park Place
-confirm	*STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	Fulton Street to Washington Square	from_stop=Fulton Street, to_stop=Washington Square
-reply	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a subway connection	vehicle=subway, from_stop=Grand Central, line=N, departure_time=4:13pm, direction=Herald Square
-apologize	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a subway connection	*=notfound, vehicle=subway
-request	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a bus connection	from_stop=?, to_stop=?
-confirm-request	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a bus connection	confirm: vehicle=bus; request: from_stop=?, to_stop=?
-confirm	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a bus connection	vehicle=bus
-reply	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Prince Street	vehicle=bus, departure_time=9:03pm, direction=East Broadway, line=M11, from_stop=Prince Street
+reply	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in ten minutes	from_stop=Houston Street, line=M4, direction=Columbia University, departure_time=11:10am, vehicle=bus
+apologize	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in fifteen minutes	*=notfound, departure_time_rel=0:15
+request	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in ten minutes	from_stop=?, to_stop=?
+confirm-request	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in thirty minutes	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
+confirm	is there a connection in *NUMBER minutes	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	is there a connection in thirty minutes	departure_time_rel=0:30
+reply	is there time requirement	request(duration)	is there time requirement	duration=36 minutes
+reply	travel time	request(duration)	travel time	duration=31 minutes
+reply	what time does it leave	"request(departure_time=""*DEPARTURE_TIME"")"	what time does it leave	departure_time=4:44pm
+reply	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Herald Square	line=M79, vehicle=bus, from_stop=Dyckman Street, departure_time=12:05pm, direction=Herald Square
+apologize	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Houston Street	*=notfound, to_stop=Houston Street
+request	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Franklin Street	from_stop=?
+confirm-request	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Rector Street	confirm: to_stop=Rector Street; request: from_stop=?
+confirm	connection to *STOP	"inform(to_stop=""*STREET"")"	connection to Rector Street	to_stop=Rector Street
+reply	*STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	Inwood to Marble Hill	line=Z, direction=Marble Hill, from_stop=Inwood, vehicle=subway, departure_time=12:19pm
+apologize	*STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	Prince Street to Columbia University	*=notfound, from_stop=Prince Street, to_stop=Columbia University
+confirm	*STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	Lincoln Center to Delancey Street	from_stop=Lincoln Center, to_stop=Delancey Street
+reply	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Inwood to *NUMBER street	from_stop=Inwood, direction=Lincoln Center, vehicle=subway, departure_time=1:03pm, line=3
+apologize	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Canal Street to *NUMBER street	*=notfound, from_stop=Canal Street
+request	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Bowery to *NUMBER street	to_stop=?
+confirm-request	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Delancey Street to *NUMBER street	confirm: from_stop=Delancey Street; request: to_stop=?
+confirm	*STOP to *NUMBER street	"inform(from_stop=""*STREET"")"	Delancey Street to *NUMBER street	from_stop=Delancey Street
+reply	*STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	Broad Street to Rector Street	from_stop=Broad Street, departure_time=4:09pm, line=1, vehicle=subway, direction=Rector Street
+apologize	*STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	Bleecker Street to Franklin Street	*=notfound, from_stop=Bleecker Street, to_stop=Franklin Street
+confirm	*STOP to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	East Broadway to Columbia University	from_stop=East Broadway, to_stop=Columbia University
+reply	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a subway connection	vehicle=subway, from_stop=Grand Street, departure_time=11:01am, line=2, direction=Rector Street
+apologize	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a bus connection	*=notfound, vehicle=bus
+request	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a subway connection	from_stop=?, to_stop=?
+confirm-request	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a subway connection	confirm: vehicle=subway; request: from_stop=?, to_stop=?
+confirm	want to find a *VEHICLE connection	"inform(vehicle=""*VEHICLE"")"	want to find a subway connection	vehicle=subway
+reply	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Bowling Green	from_stop=Bowling Green, direction=Grand Street, departure_time=11:06pm, vehicle=subway, line=L
 apologize	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Essex Street	*=notfound, from_stop=Essex Street
-request	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Broad Street	to_stop=?
-confirm-request	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Essex Street	confirm: from_stop=Essex Street; request: to_stop=?
-confirm	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Essex Street	from_stop=Essex Street
-reply	find *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	find bus connection from Delancey Street to East Broadway	direction=East Broadway, from_stop=Delancey Street, departure_time=4:10pm, line=M106, vehicle=bus
-apologize	find *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	find bus connection from Delancey Street to Franklin Street	*=notfound, from_stop=Delancey Street, to_stop=Franklin Street, vehicle=bus
-confirm	find *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	find subway connection from Columbus Circle to Inwood	from_stop=Columbus Circle, to_stop=Inwood, vehicle=subway
-reply	i wanna find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i wanna find a bus connection from Cathedral Parkway to Rector Street	vehicle=bus, line=M42, direction=Rector Street, from_stop=Cathedral Parkway, departure_time=9:09am
-apologize	i wanna find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i wanna find a bus connection from Astor Place to Bowling Green	*=notfound, from_stop=Astor Place, to_stop=Bowling Green, vehicle=bus
-confirm	i wanna find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i wanna find a bus connection from Franklin Street to Prince Street	from_stop=Franklin Street, to_stop=Prince Street, vehicle=bus
-reply	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Astor Place	vehicle=bus, departure_time=10:01am, line=M96, from_stop=Park Place, direction=Astor Place
+request	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Bryant Park	to_stop=?
+confirm-request	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Wall Street	confirm: from_stop=Wall Street; request: to_stop=?
+confirm	i'm traveling from *STOP	"inform(from_stop=""*STOP"")"	i'm traveling from Wall Street	from_stop=Wall Street
+reply	find *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	find subway connection from Lincoln Center to Bryant Park	line=D, vehicle=subway, from_stop=Lincoln Center, direction=Bryant Park, departure_time=11:16am
+apologize	find *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	find bus connection from Astor Place to Bryant Park	*=notfound, from_stop=Astor Place, to_stop=Bryant Park, vehicle=bus
+confirm	find *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	find subway connection from Delancey Street to Columbia University	from_stop=Delancey Street, to_stop=Columbia University, vehicle=subway
+reply	i wanna find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i wanna find a bus connection from Bleecker Street to Columbus Circle	departure_time=10:18am, from_stop=Bleecker Street, vehicle=bus, line=M22, direction=Columbus Circle
+apologize	i wanna find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i wanna find a bus connection from Washington Square to Prince Street	*=notfound, from_stop=Washington Square, to_stop=Prince Street, vehicle=bus
+confirm	i wanna find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i wanna find a bus connection from Marble Hill to Chambers Street	from_stop=Marble Hill, to_stop=Chambers Street, vehicle=bus
+reply	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Cathedral Parkway	vehicle=subway, departure_time=4:12pm, direction=Cathedral Parkway, line=N, from_stop=Bleecker Street
 apologize	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Wall Street	*=notfound, to_stop=Wall Street
-request	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Astor Place	from_stop=?
-confirm-request	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to World Trade Center	confirm: to_stop=World Trade Center; request: from_stop=?
-confirm	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to World Trade Center	to_stop=World Trade Center
-reply	i want a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want a subway connection from Marble Hill to Canal Street	line=Z, direction=Canal Street, from_stop=Marble Hill, vehicle=subway, departure_time=12:19pm
-apologize	i want a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want a bus connection from Washington Square to Grand Street	*=notfound, from_stop=Washington Square, to_stop=Grand Street, vehicle=bus
-confirm	i want a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want a subway connection from Lincoln Center to Port Authority Bus Terminal	from_stop=Lincoln Center, to_stop=Port Authority Bus Terminal, vehicle=subway
-reply	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Union Square	vehicle=subway, from_stop=Union Square, departure_time=9:02am, line=Z, direction=Times Square
-apologize	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Bowery	*=notfound, from_stop=Bowery
-request	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Lincoln Center	to_stop=?
-confirm-request	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Inwood	confirm: from_stop=Inwood; request: to_stop=?
-confirm	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Inwood	from_stop=Inwood
-reply	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Central Park man	vehicle=bus, direction=Bleecker Street, from_stop=Central Park, line=M20, departure_time=7:00am
-apologize	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Essex Street man	*=notfound, from_stop=Essex Street
-request	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Central Park man	to_stop=?
-confirm-request	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Columbia University man	confirm: from_stop=Columbia University; request: to_stop=?
-confirm	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Columbia University man	from_stop=Columbia University
-reply	i want to find a connection from *STOP queen to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i want to find a connection from Wall Street queen to East Broadway	vehicle=subway, direction=East Broadway, departure_time=7:02pm, line=D, from_stop=Wall Street
-apologize	i want to find a connection from *STOP queen to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i want to find a connection from Bowery queen to Prince Street	*=notfound, from_stop=Bowery, to_stop=Prince Street
-confirm	i want to find a connection from *STOP queen to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i want to find a connection from Bryant Park queen to Wall Street	from_stop=Bryant Park, to_stop=Wall Street
-reply	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Chambers Street from	line=M, from_stop=Chambers Street, vehicle=subway, departure_time=8:07am, direction=Delancey Street
-apologize	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Penn Station from	*=notfound, from_stop=Penn Station, vehicle=bus
-request	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Columbus Circle from	to_stop=?
-confirm-request	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Fulton Street from	confirm: from_stop=Fulton Street, vehicle=subway; request: to_stop=?
-confirm	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Fulton Street from	from_stop=Fulton Street, vehicle=subway
-reply	i want to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Times Square to Canal Street	line=M14, vehicle=bus, departure_time=2:15pm, from_stop=Times Square, direction=Canal Street
-apologize	i want to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Franklin Street to Broad Street	*=notfound, from_stop=Franklin Street, to_stop=Broad Street, vehicle=bus
-confirm	i want to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Lincoln Center to Bryant Park	from_stop=Lincoln Center, to_stop=Bryant Park, vehicle=subway
-reply	i want to find a *VEHICLE connection from *STOP to *STOP *NUMBER	"inform(to_stop=""*STREET"")&inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Bleecker Street to Columbus Circle *NUMBER	departure_time=10:18am, from_stop=Bleecker Street, vehicle=bus, line=M22, direction=Columbus Circle
-apologize	i want to find a *VEHICLE connection from *STOP to *STOP *NUMBER	"inform(to_stop=""*STREET"")&inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Washington Square to Prince Street *NUMBER	*=notfound, to_stop=Prince Street, from_stop=Washington Square, vehicle=bus
-confirm	i want to find a *VEHICLE connection from *STOP to *STOP *NUMBER	"inform(to_stop=""*STREET"")&inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Marble Hill to Chambers Street *NUMBER	to_stop=Chambers Street, from_stop=Marble Hill, vehicle=bus
-reply	i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i want to go by subway	vehicle=subway, departure_time=10:07am, from_stop=Cortlandt Street, direction=Rockefeller Center, line=E
+request	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Wall Street	from_stop=?
+confirm-request	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Astor Place	confirm: to_stop=Astor Place; request: from_stop=?
+confirm	i wanna go to *STOP	"inform(to_stop=""*STOP"")"	i wanna go to Astor Place	to_stop=Astor Place
+reply	i want a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want a subway connection from Inwood to Cortlandt Street	direction=Cortlandt Street, from_stop=Inwood, line=M, vehicle=subway, departure_time=8:09am
+apologize	i want a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want a subway connection from Times Square to Essex Street	*=notfound, from_stop=Times Square, to_stop=Essex Street, vehicle=subway
+confirm	i want a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want a bus connection from Cathedral Parkway to Washington Square	from_stop=Cathedral Parkway, to_stop=Washington Square, vehicle=bus
+reply	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Bowling Green	vehicle=bus, line=M22, direction=Franklin Street, departure_time=6:05pm, from_stop=Bowling Green
+apologize	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Lincoln Center	*=notfound, from_stop=Lincoln Center
+request	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from Union Square	to_stop=?
+confirm-request	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from East Broadway	confirm: from_stop=East Broadway; request: to_stop=?
+confirm	i want to find a connection from *STOP	"inform(from_stop=""*STREET"")"	i want to find a connection from East Broadway	from_stop=East Broadway
+reply	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Park Place man	departure_time=9:14am, line=M15, from_stop=Park Place, direction=Port Authority Bus Terminal, vehicle=bus
+apologize	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from East Broadway man	*=notfound, from_stop=East Broadway
+request	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Washington Square man	to_stop=?
+confirm-request	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Astor Place man	confirm: from_stop=Astor Place; request: to_stop=?
+confirm	i want to find a connection from *STOP man	"inform(from_stop=""*STREET"")"	i want to find a connection from Astor Place man	from_stop=Astor Place
+reply	i want to find a connection from *STOP queen to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i want to find a connection from Columbus Circle queen to Essex Street	direction=Essex Street, vehicle=bus, from_stop=Columbus Circle, line=M101, departure_time=10:14am
+apologize	i want to find a connection from *STOP queen to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i want to find a connection from Prince Street queen to Essex Street	*=notfound, from_stop=Prince Street, to_stop=Essex Street
+confirm	i want to find a connection from *STOP queen to *STOP	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i want to find a connection from Cortlandt Street queen to Columbus Circle	from_stop=Cortlandt Street, to_stop=Columbus Circle
+reply	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Bleecker Street from	vehicle=bus, direction=Franklin Street, departure_time=7:07am, line=M3, from_stop=Bleecker Street
+apologize	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Times Square from	*=notfound, from_stop=Times Square, vehicle=bus
+request	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Cathedral Parkway from	to_stop=?
+confirm-request	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Dyckman Street from	confirm: from_stop=Dyckman Street, vehicle=subway; request: to_stop=?
+confirm	i want to find a *VEHICLE connection from *STOP from	"inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Dyckman Street from	from_stop=Dyckman Street, vehicle=subway
+reply	i want to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from East Broadway to City Hall	from_stop=East Broadway, vehicle=bus, departure_time=11:15am, direction=City Hall, line=M102
+apologize	i want to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Lincoln Center to Franklin Street	*=notfound, from_stop=Lincoln Center, to_stop=Franklin Street, vehicle=subway
+confirm	i want to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Lincoln Center to World Trade Center	from_stop=Lincoln Center, to_stop=World Trade Center, vehicle=bus
+reply	i want to find a *VEHICLE connection from *STOP to *STOP *NUMBER	"inform(to_stop=""*STREET"")&inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Fulton Street to Bowling Green *NUMBER	departure_time=8:05am, line=7, direction=Bowling Green, vehicle=subway, from_stop=Fulton Street
+apologize	i want to find a *VEHICLE connection from *STOP to *STOP *NUMBER	"inform(to_stop=""*STREET"")&inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a bus connection from Canal Street to World Trade Center *NUMBER	*=notfound, to_stop=World Trade Center, from_stop=Canal Street, vehicle=bus
+confirm	i want to find a *VEHICLE connection from *STOP to *STOP *NUMBER	"inform(to_stop=""*STREET"")&inform(from_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i want to find a subway connection from Columbus Circle to Columbia University *NUMBER	to_stop=Columbia University, from_stop=Columbus Circle, vehicle=subway
+reply	i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i want to go by bus	from_stop=Lincoln Center, line=M72, vehicle=bus, departure_time=8:17pm, direction=Dyckman Street
 apologize	i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i want to go by bus	*=notfound, vehicle=bus
 request	i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i want to go by bus	from_stop=?, to_stop=?
 confirm-request	i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i want to go by subway	confirm: vehicle=subway; request: from_stop=?, to_stop=?
 confirm	i want to go by *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i want to go by subway	vehicle=subway
-reply	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Union Square	departure_time=8:08am, direction=Times Square, line=4, from_stop=Union Square, vehicle=subway
-apologize	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from East Broadway	*=notfound, from_stop=East Broadway
-request	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Lincoln Center	to_stop=?
-confirm-request	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Port Authority Bus Terminal	confirm: from_stop=Port Authority Bus Terminal; request: to_stop=?
-confirm	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Port Authority Bus Terminal	from_stop=Port Authority Bus Terminal
-reply	i want to go from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	i want to go from East Broadway to Penn Station	departure_time=10:14am, line=M22, vehicle=bus, from_stop=East Broadway, direction=Penn Station
-apologize	i want to go from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	i want to go from Astor Place to Wall Street	*=notfound, from_stop=Astor Place, to_stop=Wall Street
-confirm	i want to go from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	i want to go from Columbus Circle to Chambers Street	from_stop=Columbus Circle, to_stop=Chambers Street
-reply	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Bowling Green	direction=Canal Street, line=M14, vehicle=bus, from_stop=Bowling Green, departure_time=10:15am
-apologize	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Park Place	*=notfound, from_stop=Park Place
-request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Astor Place	to_stop=?
-confirm-request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Cortlandt Street	confirm: from_stop=Cortlandt Street; request: to_stop=?
-confirm	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Cortlandt Street	from_stop=Cortlandt Street
-reply	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to East Broadway	from_stop=Port Authority Bus Terminal, vehicle=bus, line=M102, departure_time=11:12am, direction=East Broadway
-apologize	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to Lincoln Center	*=notfound, to_stop=Lincoln Center
-request	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to Lincoln Center	from_stop=?
-confirm-request	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to Columbus Circle	confirm: to_stop=Columbus Circle; request: from_stop=?
-confirm	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to Columbus Circle	to_stop=Columbus Circle
-reply	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Columbus Circle hello	line=M5, vehicle=bus, from_stop=Columbus Circle, direction=Columbus Circle, departure_time=10:17am
-apologize	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Park Place hello	*=notfound, to_stop=Park Place
-request	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Herald Square hello	from_stop=?
-confirm-request	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Rector Street hello	confirm: to_stop=Rector Street; request: from_stop=?
-confirm	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Rector Street hello	to_stop=Rector Street
-reply	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Bowery	direction=Bowery, departure_time=7:04am, vehicle=bus, from_stop=Herald Square, line=M57
-apologize	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Times Square	*=notfound, to_stop=Times Square
-request	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Bowling Green	from_stop=?
-confirm-request	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Grand Street	confirm: to_stop=Grand Street; request: from_stop=?
-confirm	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Grand Street	to_stop=Grand Street
-reply	and what is the connection in an *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	and what is the connection in an half an hour	line=M50, direction=Marble Hill, departure_time=6:05pm, vehicle=bus, from_stop=Fulton Street
+reply	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Lincoln Center	vehicle=subway, from_stop=Lincoln Center, departure_time=4:12pm, direction=Columbia University, line=D
+apologize	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Union Square	*=notfound, from_stop=Union Square
+request	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Broad Street	to_stop=?
+confirm-request	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Cortlandt Street	confirm: from_stop=Cortlandt Street; request: to_stop=?
+confirm	i want to go from *STOP	"inform(from_stop=""*STOP"")"	i want to go from Cortlandt Street	from_stop=Cortlandt Street
+reply	i want to go from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	i want to go from Roosevelt Island to Columbus Circle	vehicle=subway, from_stop=Roosevelt Island, direction=Columbus Circle, departure_time=9:00pm, line=D
+apologize	i want to go from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	i want to go from Grand Central to Houston Street	*=notfound, from_stop=Grand Central, to_stop=Houston Street
+confirm	i want to go from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	i want to go from Rockefeller Center to Columbus Circle	from_stop=Rockefeller Center, to_stop=Columbus Circle
+reply	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Delancey Street	direction=Port Authority Bus Terminal, line=B, from_stop=Delancey Street, vehicle=subway, departure_time=7:11am
+apologize	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Union Square	*=notfound, from_stop=Union Square
+request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Port Authority Bus Terminal	to_stop=?
+confirm-request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Astor Place	confirm: from_stop=Astor Place; request: to_stop=?
+confirm	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Astor Place	from_stop=Astor Place
+reply	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to City Hall	vehicle=bus, from_stop=East Broadway, line=M66, direction=City Hall, departure_time=11:03am
+apologize	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to Bryant Park	*=notfound, to_stop=Bryant Park
+request	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to Canal Street	from_stop=?
+confirm-request	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to East Broadway	confirm: to_stop=East Broadway; request: from_stop=?
+confirm	i want to go to *STOP	"inform(to_stop=""*STOP"")"	i want to go to East Broadway	to_stop=East Broadway
+reply	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Central Park hello	vehicle=subway, from_stop=Union Square, departure_time=2:18pm, line=3, direction=Central Park
+apologize	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Grand Street hello	*=notfound, to_stop=Grand Street
+request	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Fulton Street hello	from_stop=?
+confirm-request	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Port Authority Bus Terminal hello	confirm: to_stop=Port Authority Bus Terminal; request: from_stop=?
+confirm	i want to go to *STOP hello	"inform(to_stop=""*STREET"")"	i want to go to Port Authority Bus Terminal hello	to_stop=Port Authority Bus Terminal
+reply	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Franklin Street	departure_time=11:18am, vehicle=bus, from_stop=Grand Street, line=M3, direction=Franklin Street
+apologize	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Dyckman Street	*=notfound, to_stop=Dyckman Street
+request	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Rector Street	from_stop=?
+confirm-request	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Essex Street	confirm: to_stop=Essex Street; request: from_stop=?
+confirm	i want to go to *STOP	"inform(to_stop=""*STREET"")"	i want to go to Essex Street	to_stop=Essex Street
+reply	and what is the connection in an *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	and what is the connection in an half an hour	departure_time=5:01pm, line=M5, vehicle=bus, from_stop=Houston Street, direction=Rector Street
 apologize	and what is the connection in an *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	and what is the connection in an half an hour	*=notfound, departure_time_rel=0:30
 request	and what is the connection in an *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	and what is the connection in an half an hour	from_stop=?, to_stop=?
 confirm-request	and what is the connection in an *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	and what is the connection in an half an hour	confirm: departure_time_rel=0:30; request: from_stop=?, to_stop=?
 confirm	and what is the connection in an *NUMBER an hour	"inform(departure_time_rel=""*DEPARTURE_TIME_REL"")"	and what is the connection in an half an hour	departure_time_rel=0:30
-reply	uh what is the distance of that trip	request(distance)	uh what is the distance of that trip	distance=4.4 miles
-reply	and what's the duration of that	request(duration)	and what's the duration of that	duration=64 minutes
-reply	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the bus connection from Columbia University	vehicle=bus, from_stop=Columbia University, departure_time=11:19am, line=M100, direction=Fulton Street
-apologize	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the subway connection from Cortlandt Street	*=notfound, from_stop=Cortlandt Street, vehicle=subway
-request	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the subway connection from Park Place	to_stop=?
-confirm-request	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the subway connection from Roosevelt Island	confirm: from_stop=Roosevelt Island, vehicle=subway; request: to_stop=?
-confirm	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the subway connection from Roosevelt Island	from_stop=Roosevelt Island, vehicle=subway
-reply	i would like to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i would like to find a subway connection from Penn Station to Bowling Green	vehicle=subway, line=R, departure_time=9:12am, direction=Bowling Green, from_stop=Penn Station
-apologize	i would like to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i would like to find a subway connection from Cathedral Parkway to Rockefeller Center	*=notfound, from_stop=Cathedral Parkway, to_stop=Rockefeller Center, vehicle=subway
-confirm	i would like to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i would like to find a subway connection from Lincoln Center to Broad Street	from_stop=Lincoln Center, to_stop=Broad Street, vehicle=subway
-reply	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a subway	direction=Dyckman Street, departure_time=7:01pm, vehicle=subway, line=C, from_stop=Port Authority Bus Terminal
-apologize	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a bus	*=notfound, vehicle=bus
-request	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a subway	from_stop=?, to_stop=?
+reply	and what time would the next connection be	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	and what time would the next connection be	departure_time=10:21pm
+confirm-reply	and what time would the next connection be	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	and what time would the next connection be	confirm: alternative=next; reply: departure_time=10:21pm
+confirm	and what time would the next connection be	"request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	and what time would the next connection be	alternative=next
+reply	uh what is the distance of that trip	request(distance)	uh what is the distance of that trip	distance=6.4 miles
+reply	yes what time does that leave again	"request(departure_time=""*DEPARTURE_TIME"")"	yes what time does that leave again	departure_time=7:46pm
+reply	and what's the duration of that	request(duration)	and what's the duration of that	duration=71 minutes
+reply	when will the next *VEHICLE	"inform(vehicle=""*VEHICLE"")&request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when will the next bus	departure_time=8:22am
+confirm-reply	when will the next *VEHICLE	"inform(vehicle=""*VEHICLE"")&request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when will the next subway	confirm: vehicle=subway, alternative=next; reply: departure_time=8:22am
+confirm	when will the next *VEHICLE	"inform(vehicle=""*VEHICLE"")&request(departure_time=""*DEPARTURE_TIME"")&inform(alternative=""next"")"	when will the next subway	vehicle=subway, alternative=next
+reply	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the bus connection from Rockefeller Center	vehicle=bus, line=M20, from_stop=Rockefeller Center, departure_time=11:16pm, direction=Herald Square
+apologize	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the bus connection from Lincoln Center	*=notfound, from_stop=Lincoln Center, vehicle=bus
+request	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the bus connection from Astor Place	to_stop=?
+confirm-request	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the bus connection from Grand Street	confirm: from_stop=Grand Street, vehicle=bus; request: to_stop=?
+confirm	i would like the *VEHICLE connection from *STOP	"inform(from_stop=""*STREET"")&inform(vehicle=""*VEHICLE"")"	i would like the bus connection from Grand Street	from_stop=Grand Street, vehicle=bus
+reply	i would like to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i would like to find a bus connection from Broad Street to Roosevelt Island	direction=Roosevelt Island, from_stop=Broad Street, departure_time=10:12am, line=M8, vehicle=bus
+apologize	i would like to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i would like to find a bus connection from Dyckman Street to Houston Street	*=notfound, from_stop=Dyckman Street, to_stop=Houston Street, vehicle=bus
+confirm	i would like to find a *VEHICLE connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")&inform(vehicle=""*VEHICLE"")"	i would like to find a subway connection from Lincoln Center to Astor Place	from_stop=Lincoln Center, to_stop=Astor Place, vehicle=subway
+reply	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a bus	direction=Penn Station, line=M22, vehicle=bus, from_stop=Rector Street, departure_time=8:19am
+apologize	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a subway	*=notfound, vehicle=subway
+request	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a bus	from_stop=?, to_stop=?
 confirm-request	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a bus	confirm: vehicle=bus; request: from_stop=?, to_stop=?
 confirm	i would like to find a *VEHICLE	"inform(vehicle=""*VEHICLE"")"	i would like to find a bus	vehicle=bus
-reply	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Houston Street	departure_time=11:16am, line=M22, vehicle=bus, from_stop=Houston Street, direction=Washington Square
-apologize	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Columbia University	*=notfound, from_stop=Columbia University
-request	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Rector Street	to_stop=?
-confirm-request	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Park Place	confirm: from_stop=Park Place; request: to_stop=?
-confirm	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Park Place	from_stop=Park Place
-reply	i would like to go to from *STOP to *STOP man	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i would like to go to from Delancey Street to Houston Street man	vehicle=subway, departure_time=12:13pm, from_stop=Delancey Street, line=D, direction=Houston Street
-apologize	i would like to go to from *STOP to *STOP man	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i would like to go to from East Broadway to Washington Square man	*=notfound, from_stop=East Broadway, to_stop=Washington Square
-confirm	i would like to go to from *STOP to *STOP man	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i would like to go to from Roosevelt Island to Wall Street man	from_stop=Roosevelt Island, to_stop=Wall Street
-reply	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Dyckman Street	departure_time=4:14pm, direction=Dyckman Street, vehicle=subway, line=Z, from_stop=Canal Street
-apologize	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Times Square	*=notfound, to_stop=Times Square
-request	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Penn Station	from_stop=?
-confirm-request	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Essex Street	confirm: to_stop=Essex Street; request: from_stop=?
-confirm	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Essex Street	to_stop=Essex Street
-reply	can you give me a time for the next connection	"inform(alternative=""next"")"	can you give me a time for the next connection	line=M7, departure_time=8:05pm, direction=East Broadway, from_stop=Times Square, vehicle=bus
+reply	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Port Authority Bus Terminal	vehicle=bus, line=M11, departure_time=8:13am, direction=World Trade Center, from_stop=Port Authority Bus Terminal
+apologize	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Delancey Street	*=notfound, from_stop=Delancey Street
+request	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Houston Street	to_stop=?
+confirm-request	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Prince Street	confirm: from_stop=Prince Street; request: to_stop=?
+confirm	i would like to go from *STOP	"inform(from_stop=""*STREET"")"	i would like to go from Prince Street	from_stop=Prince Street
+reply	i would like to go to from *STOP to *STOP man	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i would like to go to from Bleecker Street to Grand Central man	direction=Grand Central, line=M, from_stop=Bleecker Street, vehicle=subway, departure_time=8:01am
+apologize	i would like to go to from *STOP to *STOP man	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i would like to go to from Chambers Street to Canal Street man	*=notfound, from_stop=Chambers Street, to_stop=Canal Street
+confirm	i would like to go to from *STOP to *STOP man	"inform(from_stop=""*STREET"")&inform(to_stop=""*STREET"")"	i would like to go to from Rockefeller Center to Cathedral Parkway man	from_stop=Rockefeller Center, to_stop=Cathedral Parkway
+reply	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Rector Street	from_stop=Franklin Street, line=Q, departure_time=11:12am, direction=Rector Street, vehicle=subway
+apologize	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Columbia University	*=notfound, to_stop=Columbia University
+request	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Roosevelt Island	from_stop=?
+confirm-request	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Rector Street	confirm: to_stop=Rector Street; request: from_stop=?
+confirm	i would like to go to *STOP	"inform(to_stop=""*STREET"")"	i would like to go to Rector Street	to_stop=Rector Street
+reply	can you give me a time for the next connection	"inform(alternative=""next"")"	can you give me a time for the next connection	line=M35, departure_time=10:18am, from_stop=Canal Street, direction=Lincoln Center, vehicle=bus
 apologize	can you give me a time for the next connection	"inform(alternative=""next"")"	can you give me a time for the next connection	*=notfound, alternative=next
 confirm	can you give me a time for the next connection	"inform(alternative=""next"")"	can you give me a time for the next connection	alternative=next
-reply	can you give me the second option	"inform(alternative=""2"")"	can you give me the second option	vehicle=bus, direction=East Broadway, from_stop=Astor Place, line=M103, departure_time=7:01pm
+reply	can you give me the second option	"inform(alternative=""2"")"	can you give me the second option	line=M103, direction=Fulton Street, vehicle=bus, from_stop=Marble Hill, departure_time=2:13pm
 apologize	can you give me the second option	"inform(alternative=""2"")"	can you give me the second option	*=notfound, alternative=2
 confirm	can you give me the second option	"inform(alternative=""2"")"	can you give me the second option	alternative=2
