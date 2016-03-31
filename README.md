@@ -109,8 +109,9 @@ generate fluent utterances using this dataset:
 * The `alternative` slot has only been delexicalized when its value numeric (e.g.,
     *second option*). The usage of ordinal numerals is indicated by using the `*ALTERNATIVE-th`
     placeholder, cardinal numerals do not have the `-th` suffix.
-    The utterances for `alternative=next`, `alternative=previous`, and `alternative=last` have
-    not been delexicalized as different expressions can be used and underlie entrainment.
+    The utterances for `alternative=next`, `alternative=previous`, `alternative=dontcare`,
+    and `alternative=last` have not been delexicalized as different expressions can be used and
+    underlie entrainment.
 
 
 Dataset development (technical manual)
