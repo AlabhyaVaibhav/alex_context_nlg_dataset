@@ -823,7 +823,7 @@ reply	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&info
 apologize	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Roosevelt Island to East Broadway	*=notfound, from_stop=Roosevelt Island, to_stop=East Broadway
 confirm	give me a connection from *STOP to *STOP	"inform(from_stop=""*STOP"")&inform(to_stop=""*STOP"")"	give me a connection from Wall Street to Delancey Street	from_stop=Wall Street, to_stop=Delancey Street
 reply	give me the number of transfers	request(num_transfers)	give me the number of transfers	num_transfers=0
-reply	*NUMBER minutes	"inform(departure_time=""*TIME"")"	thirty minutes	direction=Prince Street, from_stop=Broad Street, vehicle=bus, departure_time=0:30pm, line=M14
+reply	*NUMBER minutes	"inform(departure_time=""*TIME"")"	thirty minutes	direction=Prince Street, from_stop=Broad Street, vehicle=bus, departure_time=12:30pm, line=M14
 apologize	*NUMBER minutes	"inform(departure_time=""*TIME"")"	twenty minutes	*=notfound, departure_time=0:20
 request	*NUMBER minutes	"inform(departure_time=""*TIME"")"	thirty minutes	from_stop=?, to_stop=?
 confirm-request	*NUMBER minutes	"inform(departure_time=""*TIME"")"	thirty minutes	confirm: departure_time=0:30; request: from_stop=?, to_stop=?
@@ -1565,7 +1565,7 @@ confirm	i want to go from *STOP to *STOP	"inform(to_stop=""*STREET"")&inform(fro
 reply	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Cathedral Parkway	vehicle=bus, from_stop=Cathedral Parkway, direction=Houston Street, departure_time=9:10am, line=M1
 apologize	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Prince Street	*=notfound, from_stop=Prince Street
 request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Grand Street	to_stop=?
-confirm-request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Times Square	confirm: from_stop=Times Square; request: to_stop=?
+confirm-request	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Rector Street	confirm: from_stop=Rector Street; request: to_stop=?
 confirm	i want to go from *STOP	"inform(from_stop=""*STREET"")"	i want to go from Times Square	from_stop=Times Square
 reply	i want to go from *STOP to	"inform(from_stop=""*STREET"")"	i want to go from Washington Square to	vehicle=subway, line=A, departure_time=11:04am, direction=Delancey Street, from_stop=Washington Square
 apologize	i want to go from *STOP to	"inform(from_stop=""*STREET"")"	i want to go from Park Place to	*=notfound, from_stop=Park Place
