@@ -2,8 +2,8 @@
 Alex Context NLG Dataset
 ========================
 
-**Authors**: Ondřej Dušek, Filip Jurčíček
-**License**: Creative Commons 4.0 BY-SA <https://creativecommons.org/licenses/by-sa/4.0/>.
+* **Authors**: Ondřej Dušek, Filip Jurčíček
+* **License**: [Creative Commons 4.0 BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 
 This is a dataset for NLG in the English Public Transport Information domain which contains 
 preceding context (user utterance) along with each data instance (pair of source meaning 
@@ -41,7 +41,7 @@ suffix). The lexicalized version was used in CrowdFlower tasks.
 
 ### The domain ###
 
-The domain is limited to public transport by bus or subway among New York City subway stations
+The domain is public transport by bus or subway among New York City subway stations
 on Manhattan. The users may specify origin and destination stops, departure time, and means of
 transport. After a connection is provided, they may ask about its duration, distance, or arrival 
 time, and number of transfers. For simplicity, directions provided in the dataset do not involve
