@@ -56,12 +56,12 @@ and may also contain a slot and a value.
 
 **Examples**:
 
-| dialogue act                                        | example utterance                 |
-| ----------------------------------------------------|-----------------------------------|
-| hello()                                             | Hi.                               |
-| request(from_stop)                                  | Where are you coming from?        |
-| inform(departure_time="7:00")&inform(ampm="pm")     | I want departure at 7 pm.         |
-| iconfirm(to_stop="Central Park")&request(from_stop) | OK, from Central Park. Where to?  |
+| dialogue act                                          | example utterance                   |
+| ------------------------------------------------------|-------------------------------------|
+| `hello()`                                             | *Hi.*                               |
+| `request(from_stop)`                                  | *Where are you coming from?*        |
+| `inform(departure_time="7:00")&inform(ampm="pm")`     | *I want departure at 7 pm.*         |
+| `iconfirm(to_stop="Central Park")&request(from_stop)` | *OK, from Central Park. Where to?*  |
 
 The **act types used** in this dataset are:
 * `inform` -- informing about a connection or a specific detail (distance, arrival time)
