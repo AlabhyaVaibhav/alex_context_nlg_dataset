@@ -21,3 +21,7 @@
 887262 -- repeatedly assigned tasks, many more checking fixes (more lenient towards time, stricter to common mistakes), 25 tasks requiring 3 judgments
 887586 -- normalized space in regexes for better matching + bugfixes + still more lenient towards time, 119 tasks requiring 2 judgments
 888082 -- ditto, 380 tasks requiring 1 judgment
+889019 -- ditto, 120 tasks with 1 judgment
+890174 -- slightly improved irrelevant information checking (rejecting common mistakes and such "can i confirm"), 112 tasks with 1 judgment
+891079 -- ditto, 2 tasks requiring 3 judgments
+891080 -- ditto, 23 tasks requiring 2 judgments
