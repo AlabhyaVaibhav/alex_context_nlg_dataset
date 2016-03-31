@@ -146,19 +146,63 @@ We assume that in-domain calls have been recorded and transcribed, and are locat
 
 4) Generating reply tasks:
 
-    alex/tools/crowdflower/nlg_job/generate_reply_tasks.py abstract/abstract.tsv > tasks/tasks.tsv
+    alex/tools/crowdflower/nlg_job/generate_reply_tasks.py -o abstract/abstract.tsv > tasks/tasks.tsv
     (head -n 1 tasks/tasks.tsv && tail -n +2 tasks/tasks.tsv | shuf) > tasks/tasks-shuffled.tsv
 
    The reply tasks are shuffled so that they don't appear in a regular order on CrowdFlower
    (otherwise, CF users would always get very similar tasks in one batch).
+   The `-o` switch stores context frequency information with each task.
 
-### Running the CrowdFlower task ###
+### Running the CrowdFlower jobs ###
 
+All the required files for the CF task are located in `alex/tools/crowdflower/nlg_job`.  Create a
+new empty CF job (*New job* -> *See more...* -> *Start from scratch*), then use the files provided
+on the *Design* pane in the following way:
 
+* Copy `CFJOB-reply.html` into the *CML* field (turn off WYSIWYG first)
+* Click on *Show custom CSS/JS* and add `CFJOB-reply.js` into the Javascript field and
+  `CFJOB-reply.css` into the CSS field
+* Copy `CFJOB-reply.instructions.html` into the instructions field (turn off WYSIWYG first)
+
+On the *Data* pane, you can upload the data you created in the data preparation step.
+
+The CF task must be supplemented by a spellchecking server. The server must run on a server that
+has a SSL certificate, and must have access to the certificate (see `server_langid.py` for details).
+CF tasks will not accept a non-SSL connection. Run the server and change the server URL in the CF
+job's Javascript field accordingly (the `serverURL` variable).
 
 ### Checking CrowdFlower results ###
 
+Since the checks implemented in the Javascript code are not and cannot be 100% accurate, results
+obtained from CF need to be checked manually for errors. This is done using the `checker.py`
+script:
+
+    alex/tools/crowdflower/nlg_job/checker.py tasks/tasks.tsv postprocessed.csv \
+        cf_results.csv [cf_results2.csv ...]
+
+You will then interactively accept or reject each CF user's response (Y/N) and optionally also
+assess  whether it contains lexical and/or syntactic entrainment (L/S, separated by space). You
+may also postedit  response (just append the postedit text after your accepting judgment, separated
+by two spaces).
+
+After your check is done, you might want to resubmit the unsuccessful replies to CF in order to get
+better replies. You can assemble all the unfinished tasks using this command:
+
+    alex/tools/crowdflower/nlg_job/get_unfinished.py tasks/tasks-shuffled.tsv postprocessed.csv
+
+This will print all unfinished tasks to standard output, with comments specifying how many CF
+judgments are still required (out of the preset 3 judgments).
+
 ### Assembling the dataset ###
+
+The final dataset assembly does further normalization and checking. You will be presented with
+all spellchecking errors (CF users are allowed 1 error per 10 tokens) and unexpected final
+punctuation; otherwise, the process is automatic. To assemble the dataset, run the following
+command:
+
+    alex/tools/crowdflower/nlg_job/build_dataset.py tasks.tsv <dataset_name> postprocessed.csv
+
+This will save the files `<dataset_name>.csv` and `<dataset_name>.json`.
 
 
 Acknowledgments
