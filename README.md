@@ -17,6 +17,8 @@ More information can be found in the following paper:
 * Ondřej Dušek and Filip Jurčíček: *A Context-aware Natural Language Generation Dataset for
     Dialogue Systems*. In: RE-WOCHAT, LREC 2016.
 
+Please cite the above paper if you use this dataset in your research.
+
 
 Dataset format
 --------------
