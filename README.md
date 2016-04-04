@@ -43,6 +43,8 @@ The dataset contains 1859 instances. Each instance has the following properties:
 All properties exist in the default (delexicalized) version and a lexicalized version (with the `-l`
 suffix). The lexicalized version was used in CrowdFlower tasks.
 
+The order of the instances is random to allow a simple training/development/test data split.
+
 ### The domain ###
 
 The domain is public transport by bus or subway among New York City subway stations
@@ -208,7 +210,8 @@ command:
 
     alex/tools/crowdflower/nlg_job/build_dataset.py tasks.tsv <dataset_name> postprocessed.csv
 
-This will save the files `<dataset_name>.csv` and `<dataset_name>.json`.
+This will save the files `<dataset_name>.csv` and `<dataset_name>.json`. The data instances are
+shuffled on the output.
 
 
 Acknowledgments
