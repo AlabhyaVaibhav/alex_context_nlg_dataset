@@ -23,6 +23,6 @@ from calls collected by Vejman (2015). Files marked `.all` contain data from bot
 what was used for the final dataset).
 
 ---
-Martin Vejman (2015): *Development of an English public transport information dialogue system.
+Martin Vejman (2015): *Development of an English public transport information dialogue system.*
     Master's Thesis, Charles University in Prague.
 
