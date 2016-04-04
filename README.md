@@ -140,7 +140,7 @@ We assume that in-domain calls have been recorded and transcribed, and are locat
 
     alex/tools/reparse/reparse_en.py src/texts.tsv > reparse/reparse.tsv
 
-3) Abstracting:
+3) Delexicalizing:
 
     alex/tools/reparse/abstract.sh reparse/reparse.tsv abstract/abstract.tsv
 
