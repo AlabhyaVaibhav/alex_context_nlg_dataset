@@ -17,7 +17,7 @@ More information can be found in the following paper:
 * Ondřej Dušek and Filip Jurčíček: *A Context-aware Natural Language Generation Dataset for
     Dialogue Systems*. In: RE-WOCHAT, LREC 2016.
 
-Please cite the above paper if you use this dataset in your research.
+Please cite the paper if you use this dataset in your research.
 
 
 Dataset format
@@ -29,8 +29,8 @@ identical. Both files use the UTF-8 encoding.
 The dataset contains 1859 instances. Each instance has the following properties:
 
 * `context_utt` -- the context user utterance (the utterance preceding to the response to be
-    generated, typically user's question the dialogue system wants to answer). Manual call
-    transcription was used to obtain the contexts.
+    generated, typically user's question the dialogue system wants to answer). Recorded calls to
+    a live dialogue system and manual transcriptions were used to obtain the contexts.
 * `context_freq` -- frequency of the context utterance within our recorded calls (each distinct
     context is only included once per response type).
 * `context_parse` -- SLU parse of the transcribed context utterance.
@@ -48,8 +48,9 @@ suffix). The lexicalized version was used in CrowdFlower tasks.
 The domain is public transport by bus or subway among New York City subway stations
 on Manhattan. The users may specify origin and destination stops, departure time, and means of
 transport. After a connection is provided, they may ask about its duration, distance, or arrival
-time, and number of transfers. For simplicity, directions provided in the dataset do not involve
-any transfers.
+time, and number of transfers. 
+
+For simplicity, directions provided in the dataset do not involve any transfers.
 
 ### Dialogue acts format ###
 
@@ -105,10 +106,10 @@ generate fluent utterances using this dataset:
     the delexicalization resulted in `*DEPARTURE_TIME *AMPM in the *AMPM` and so on.
 
 * The `num_transfers` slot was used with the values *0*, *1*, *2* in the development of the
-    dataset. Each of these values exhibits a slightly different behavior, so a generated sentence
-    might need to be adapted to the concrete value.
+    dataset. Each of these values exhibits a slightly different behavior (e.g., singular/plural), 
+    so a generated sentence might need to be adapted to the concrete value.
 
-* The `alternative` slot has only been delexicalized when its value numeric (e.g.,
+* The `alternative` slot has only been delexicalized when its value was numeric (e.g.,
     *second option*). The usage of ordinal numerals is indicated by using the `*ALTERNATIVE-th`
     placeholder, cardinal numerals do not have the `-th` suffix.
     The utterances for `alternative=next`, `alternative=previous`, `alternative=dontcare`,
@@ -125,6 +126,9 @@ datasets in different domains. A more general description is given in the paper 
 The [Alex spoken dialogue systems framework](https://github.com/UFAL-DSG/alex) is required for the
 development. All scripts relating to the dataset development are located in the
 `alex/tools/reparse/` and `alex/tools/crowdflower/nlg_job` subdirectories.
+
+We assume the `devel/` subdirectory as the working directory in all commands. The intermediary
+files are stored and versioned in the `devel/` subdirectory in this repository.
 
 ### Collecting and transcribing user utterances ###
 
