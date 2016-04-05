@@ -7,15 +7,18 @@ Alex Context NLG Dataset
 * **LINDAT release**: <http://hdl.handle.net/11234/1-1675>
 * **Development website**: <https://github.com/UFAL-DSG/alex_context_nlg_dataset>
 
-This is a dataset for NLG in the English Public Transport Information domain which contains
-preceding context (user utterance) along with each data instance (pair of source meaning
-representation and target natural language paraphrases). This allows NLG systems train on this
-dataset to entrain (adapt) to the preceding utterance, i.e., reuse wording and syntactic structure.
+This is a dataset for NLG in task-oriented spoken dialogue systems, covering the English public
+transport information domain. It includes preceding context (user utterance) along with each data
+instance (pair of source meaning representation and target natural language paraphrases).
+This allows NLG systems trained on this dataset to entrain (adapt) to preceding user utterances,
+i.e., reuse wording and syntactic structure. This should presumably improve the perceived
+naturalness of the output and may even lead to a higher task success rate. The dataset has been
+obtained using crowdsourcing on the CrowdFlower platform.
 
 More information can be found in the following paper:
 
 * Ondřej Dušek and Filip Jurčíček: *A Context-aware Natural Language Generation Dataset for
-    Dialogue Systems*. In: RE-WOCHAT, LREC 2016.
+    Dialogue Systems*. In: RE-WOCHAT, LREC, Portorož 2016.
 
 Please cite the paper if you use this dataset in your research.
 
@@ -50,7 +53,7 @@ The order of the instances is random to allow a simple training/development/test
 The domain is public transport by bus or subway among New York City subway stations
 on Manhattan. The users may specify origin and destination stops, departure time, and means of
 transport. After a connection is provided, they may ask about its duration, distance, or arrival
-time, and number of transfers. 
+time, and number of transfers.
 
 For simplicity, directions provided in the dataset do not involve any transfers.
 
@@ -108,7 +111,7 @@ generate fluent utterances using this dataset:
     the delexicalization resulted in `*DEPARTURE_TIME *AMPM in the *AMPM` and so on.
 
 * The `num_transfers` slot was used with the values *0*, *1*, *2* in the development of the
-    dataset. Each of these values exhibits a slightly different behavior (e.g., singular/plural), 
+    dataset. Each of these values exhibits a slightly different behavior (e.g., singular/plural),
     so a generated sentence might need to be adapted to the concrete value.
 
 * The `alternative` slot has only been delexicalized when its value was numeric (e.g.,
@@ -157,7 +160,7 @@ We assume that in-domain calls have been recorded and transcribed, and are locat
     alex/tools/crowdflower/nlg_job/generate_reply_tasks.py -o abstract/abstract.tsv > tasks/tasks.tsv
     (head -n 1 tasks/tasks.tsv && tail -n +2 tasks/tasks.tsv | shuf) > tasks/tasks-shuffled.tsv
 
-   The reply tasks are shuffled so that they don't appear in a regular order on CrowdFlower
+   The reply tasks are shuffled so that they do not appear in a regular order on CrowdFlower
    (otherwise, CF users would always get very similar tasks in one batch).
    The `-o` switch stores context frequency information with each task.
 
@@ -190,7 +193,7 @@ script:
 
 You will then interactively accept or reject each CF user's response (Y/N) and optionally also
 assess  whether it contains lexical and/or syntactic entrainment (L/S, separated by space). You
-may also postedit  response (just append the postedit text after your accepting judgment, separated
+may also postedit responses (just append the postedit text after your accepting judgment, separated
 by two spaces).
 
 After your check is done, you might want to resubmit the unsuccessful replies to CF in order to get
@@ -218,7 +221,7 @@ Acknowledgments
 ---------------
 
 This work was funded by the Ministry of Education, Youth and Sports of the Czech Republic under
-the grant agreement LK11221 and core research funding, SVV project 260 224, and GAUK grant 2058214
+the grant agreement LK11221 and core research funding, SVV project 260 333, and GAUK grant 2058214
 of Charles University in Prague. It used language resources stored and distributed by the
 LINDAT/CLARIN project of the Ministry of Education, Youth and Sports of the Czech Republic
 (project LM2015071).
