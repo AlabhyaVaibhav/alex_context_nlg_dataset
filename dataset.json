@@ -1509,14 +1509,14 @@
         "response_da": "inform(from_stop=\"*FROM_STOP\")&inform(departure_time=\"*DEPARTURE_TIME\")&inform(line=\"*LINE\")&inform(direction=\"*DIRECTION\")&inform(vehicle=\"*VEHICLE\")", 
         "response_da_l": "inform(from_stop=\"Rockefeller Center\")&inform(departure_time=\"10:06am\")&inform(line=\"R\")&inform(direction=\"Rector Street\")&inform(vehicle=\"subway\")", 
         "response_nl": [
+            "Take line *LINE on the *VEHICLE from *FROM_STOP in the direction of *DIRECTION at *DEPARTURE_TIME.",
             "Take line *LINE *VEHICLE at *DEPARTURE_TIME from *FROM_STOP direction *DIRECTION.", 
             "You take *VEHICLE line *LINE from *FROM_STOP to *DIRECTION at *DEPARTURE_TIME.", 
-            ""
         ], 
         "response_nl_l": [
+            "Take line R on the subway from Rockefeller Center in the direction of Rector Street at 10:06am.",
             "Take line R subway at 10:06am from Rockefeller Center direction Rector Street.", 
             "You take subway line R from Rockefeller Center to Rector Street at 10:06am.", 
-            ""
         ]
     }, 
     {
