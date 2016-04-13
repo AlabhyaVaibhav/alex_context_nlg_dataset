@@ -1511,12 +1511,12 @@
         "response_nl": [
             "Take line *LINE on the *VEHICLE from *FROM_STOP in the direction of *DIRECTION at *DEPARTURE_TIME.",
             "Take line *LINE *VEHICLE at *DEPARTURE_TIME from *FROM_STOP direction *DIRECTION.", 
-            "You take *VEHICLE line *LINE from *FROM_STOP to *DIRECTION at *DEPARTURE_TIME.", 
+            "You take *VEHICLE line *LINE from *FROM_STOP to *DIRECTION at *DEPARTURE_TIME."
         ], 
         "response_nl_l": [
             "Take line R on the subway from Rockefeller Center in the direction of Rector Street at 10:06am.",
             "Take line R subway at 10:06am from Rockefeller Center direction Rector Street.", 
-            "You take subway line R from Rockefeller Center to Rector Street at 10:06am.", 
+            "You take subway line R from Rockefeller Center to Rector Street at 10:06am."
         ]
     }, 
     {
