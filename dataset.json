@@ -10,7 +10,7 @@
         "response_nl": [
             "I'm sorry, I cannot find a route at *DEPARTURE_TIME in the *AMPM.", 
             "Sorry but I could not find an alternative route at *DEPARTURE_TIME *AMPM.", 
-            "An alternative at *DEPARTURE_TIME *AMPM is not found I *AMPM sorry."
+            "An alternative at *DEPARTURE_TIME *AMPM is not found I am sorry."
         ], 
         "response_nl_l": [
             "I'm sorry, I cannot find a route at 11:00 in the morning.", 
