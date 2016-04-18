@@ -23,6 +23,12 @@ More information can be found in the following paper:
 Please cite the paper if you use this dataset in your research.
 
 
+Changes/fixes since the LINDAT release
+--------------------------------------
+* A bug in delexicalization fixed (“I \*AMPM”) – 1 instance affected
+* A discarded paraphrase included – 1 instance affected
+
+
 Dataset format
 --------------
 
