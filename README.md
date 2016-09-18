@@ -17,10 +17,19 @@ obtained using crowdsourcing on the CrowdFlower platform.
 
 More information can be found in the following paper:
 
-* Ondřej Dušek and Filip Jurčíček: *A Context-aware Natural Language Generation Dataset for
-    Dialogue Systems*. In: RE-WOCHAT, LREC, Portorož 2016.
+* Ondřej Dušek and Filip Jurčíček: [*A Context-aware Natural Language Generation Dataset for
+    Dialogue Systems*](http://workshop.colips.org/re-wochat/documents/02_Paper_6.pdf). In: 
+    RE-WOCHAT, LREC, Portorož 2016.
 
 Please cite the paper if you use this dataset in your research.
+
+The dataset has been used in the following experiments:
+
+* Ondřej Dušek and Filip Jurčíček: [*A Context-aware Natural Language Generator for Dialogue 
+    Systems*](http://www.sigdial.org/workshops/conference17/proceedings/pdf/SIGDIAL22.pdf). 
+    In: SIGDIAL, Los Angeles 2016.
+
+If you want to compare your results to ours, please look at this paper.
 
 
 Changes/fixes since the LINDAT release
